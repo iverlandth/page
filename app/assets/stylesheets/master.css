@@ -1,0 +1,180 @@
+#master-css {
+    background: #000;
+    height: 480px;
+    /*margin-left: 167px;*/
+    margin: auto;
+    position: relative;
+    width: 800px;
+    z-index: 70;
+}
+
+#control {
+    background: #2E2E2E;
+    display: block;
+    height: 480px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 239px;
+    z-index: 60;
+}
+
+#control li {
+    background: #2E2E2E;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    cursor: pointer;
+    font-family: Arial;
+    height: 79px;
+    padding: 0 18px;
+    transition: all 200ms ease 0s;
+    -moz-transition: all 200ms ease 0s;
+    -webkit-transition: all 200ms ease 0s;
+    -o-transition: all 200ms ease 0s;
+
+}
+
+#control li:hover {
+    background: #454545;
+
+}
+
+
+#control li div {
+    color: #CCC;
+    display: table-cell;
+    font-size: 13px;
+    font-weight: bold;
+    height: 79px;
+    line-height: 16px;
+    position: relative;
+    text-align: left;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+    vertical-align: middle;
+    width: 202px;
+    z-index: 60;
+    opacity: 0.3;
+}
+
+#control li div:hover {
+    color: #FFF;
+    opacity: 1.0;
+}
+
+#control li.a > img {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#control:hover li.a > img {
+    opacity: 0;
+    visibility: 0;
+}
+
+li.a:hover > img {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#control li.b:hover > img, #control li.c:hover > img, #control li.d:hover > img, #control li.e:hover > img, #control li.f:hover > img {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#control img {
+    left: -561px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transition: 300ms ease-in-out 200ms;
+    -moz-transition: 300ms ease-in-out 200ms;
+    -webkit-transition: 300ms ease-in-out 200ms;
+    -o-transition: 300ms ease-in-out 200ms;
+    visibility:hidden;
+}
+
+#tick-lamp {
+    background: url("tick.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 85px;
+    left: -13px;
+    position: absolute;
+    top: 0;
+    width: 253px;
+    transition: all 200ms ease 200ms;
+    -moz-transition: all 200ms ease 200ms;
+    -webkit-transition: all 200ms ease 200ms;
+    -o-transition: all 200ms ease 200ms;
+}
+
+#control li:nth-child(1):hover ~ #tick-lamp {
+    top: 0;
+}
+#control li:nth-child(2):hover ~ #tick-lamp {
+    top: 79px;
+}
+#control li:nth-child(3):hover ~ #tick-lamp {
+    top: 159px;
+}
+#control li:nth-child(4):hover ~ #tick-lamp {
+    top: 239px;
+}
+#control li:nth-child(5):hover ~ #tick-lamp {
+    top: 319px;
+}
+#control li:nth-child(6):hover ~ #tick-lamp {
+    top: 399px;
+}
+
+#extra-menu {
+    background: #1b1b1b;
+    font-family: Arial;
+    height: 480px;
+    left: -140px;
+    position: absolute;
+    width: 140px;
+}
+
+#extra-menu ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #3885b5;
+    border-top: 1px solid #146497;
+}
+
+#extra-menu > div {
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    padding: 15px 5px 10px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+
+#extra-menu ul li {
+    border-bottom: 1px solid #146497;
+    border-top: 1px solid #3885b5;
+    font-size: 12px;
+}
+
+#extra-menu ul li:hover {
+    background:#176faa;
+    border-bottom: 1px solid #15669c;
+    border-top: 1px solid #166ba3;
+}
+
+#extra-menu ul li a {
+    color: #FFF;
+    display: block;
+    font-weight: 700;
+    padding: 10px 10px 10px 15px;
+    text-decoration: none !important;
+}
