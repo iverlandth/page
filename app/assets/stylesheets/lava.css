@@ -21,6 +21,7 @@
 
 #lava-menu li {
     display: block;
+
     float: left;
     position: relative;
 }
@@ -36,6 +37,7 @@
     text-decoration: none;
     text-shadow: 0 -1px 0 #000000;
     opacity: 0.3;
+
 }
 
 #lava-menu li:hover a {
@@ -69,16 +71,16 @@
     left: 35px;
 }
 #lava-menu li:nth-child(2):hover ~ .cont-l > #lavalamp {
-    left: 117px;
+    left: 130px;
 }
 #lava-menu li:nth-child(3):hover ~ .cont-l > #lavalamp {
-    left: 199px;
+    left: 215px;
 }
 #lava-menu li:nth-child(4):hover ~ .cont-l > #lavalamp {
-    left: 281px;
+    left: 295px;
 }
 #lava-menu li:nth-child(5):hover ~ .cont-l > #lavalamp {
-    left: 362px;
+    left: 372px;
 }
 #lava-menu li:nth-child(6):hover ~ .cont-l > #lavalamp {
     left: 445px;

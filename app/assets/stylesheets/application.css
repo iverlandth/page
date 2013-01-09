@@ -13,10 +13,10 @@
 */
 body{
     background-image: url("bg.jpg");
-    color: #563dad;
+    color: #ffffff;
 }
 
-h1 a:hover{
+#footerp  h1 a:hover{
     color: rgba(253, 151, 43, 0.91);
 
 }
@@ -24,14 +24,50 @@ h3{
     color: #705c73;
 }
 #footerp{
- float: right;
+    position: fixed !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    clear: both;
+    width: 100%;
+    bottom:0px;
+    text-decoration: none;
+    margin-top: 10px;
+    background-color: #B41D23;
+    background: linear-gradient(rgba(180,29,35,1.0), rgba(78,22,21,1.0));
+    background: -moz-linear-gradient(rgba(180,29,35,1.0), rgba(78,22,21,1.0));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(180,29,35,1.0)), to(rgba(78,22,21,1.0)));
+    height: 150px;
+
+ /*float: right;
+    margin-top: -40px;*/
 }
-#footerp p,a{
-    color: #563dad;
+#footerp p{
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: -8px;
+    float: right;
+}
+#footerp a{
+    color: #fff6f9;
     text-decoration: none;
 }
 #footerp p a:hover{
     color: #df8527;
     text-decoration: none;
+
+}
+
+
+#fb a:hover{
+     color: #5882ff;
+}
+#tw a:hover{
+    color: #6ed8ff;
+}
+hr{
+    margin-top: -18px;
+    border-color: #aca6aa;
+    border-width: 1px;
 }
 
