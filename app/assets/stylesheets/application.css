@@ -12,8 +12,8 @@
  *= require_tree .
 */
 body{
-    background-image: url("bg.jpg");
-    color: #ffffff;
+  /*  background-image: url("bg.jpg");
+    color: #ffffff;      */
 }
 
 #footerp  h1 a:hover{
@@ -37,10 +37,11 @@ h3{
     background: linear-gradient(rgba(180,29,35,1.0), rgba(78,22,21,1.0));
     background: -moz-linear-gradient(rgba(180,29,35,1.0), rgba(78,22,21,1.0));
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(180,29,35,1.0)), to(rgba(78,22,21,1.0)));
-    height: 150px;
+      height: 110px;
 
- /*float: right;
-    margin-top: -40px;*/
+   z-index: 80;
+/*/*fat: right;
+   margin-top: -40px;*/
 }
 #footerp p{
     color: #ffffff;
