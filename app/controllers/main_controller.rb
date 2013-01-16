@@ -7,4 +7,6 @@ class MainController < ApplicationController
   end
   def iror
   end
+  def sqli
+  end
 end

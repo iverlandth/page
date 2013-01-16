@@ -3,6 +3,7 @@ Blogkyoir::Application.routes.draw do
   get "main/sieapp"
   get "main/phpcodeigniter"
   get "main/iror"
+  get "main/sqli"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
