@@ -66,6 +66,9 @@ h3{
 #tw a:hover{
     color: #6ed8ff;
 }
+#gps a:hover{
+    color: #b22222;
+}
 hr{
     margin-top: -18px;
     border-color: #aca6aa;

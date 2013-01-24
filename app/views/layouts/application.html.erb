@@ -4,9 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
   <meta name="viewport" content="width=device-width"/>
-  <title> Iverlandth | Dosis de Ruby on Rails, tecnologia y cosas aleatorias</title>
+  <base href="http://iverlandth.herokuapp.com/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Android, móviles, programación, Market, curso, online, Ruby, Rails, tecnologia" />
+  <meta name="description" content="Rails: Programación Aplicaciones para móviles, curso online android y ruby" />
+
+
+  <title> Iverlandth | Dosis de Ruby on Rails, tecnologia y demás</title>
 
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -15,8 +22,6 @@
 <body>
 <%= yield %>
 
-
-
 </body>
 
 <div id="footerp">
@@ -24,6 +29,8 @@
     <li><a href="https://github.com/iverlandth" target="_blank">Git Hub</a></li>
     <li id="fb"><a href="https://www.facebook.com/kyoir" target="_blank">Facebook</a></li>
     <li id="tw"><a href="http://twitter.com/iverlandth" target="_blank">Twitter</a></li>
+    <li id="gps"><a href=" https://plus.google.com/109531977658543006082" target="_blank">Google +</a></li>
+
     <li><%= mail_to "iverherlandth@gmail.com", "Contact", :encode => "hex" %></li>
     <li><%= link_to "Blog" %></li>
     <div class="cont-l">
