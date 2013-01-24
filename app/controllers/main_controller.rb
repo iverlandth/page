@@ -9,4 +9,6 @@ class MainController < ApplicationController
   end
   def sqli
   end
+  def and
+  end
 end
