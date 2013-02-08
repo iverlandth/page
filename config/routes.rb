@@ -1,4 +1,7 @@
 Blogkyoir::Application.routes.draw do
+  resources :comments
+
+
   get "main/index"
   get "main/sieapp"
   get "main/phpcodeigniter"

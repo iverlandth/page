@@ -71,5 +71,30 @@
     <p>Ahora usted ya puede programar en ruby. ¡Felicitaciones!</p>
     <hr />
   </div>
+  <% @comments = Comment.all %>
+  <h2>Comentarios</h2>
+   <% num=1 %>
+  <% @comments.each do |comment| %>
+      <p>
+        <b><%=  num %>.- Título:</b>
+        <%= comment.commenter %>
+      </p>
+
+      <p>
+        <b>Comentario:</b>
+        <%= comment.body %>
+      </p>
+      <%  num += 1 %>
+  <% end %>
+
+  <p id="notice"><%= notice %></p>
+  <br />
+  <h4>Agregar  un comentario:</h4>
+  <%  @comment = Comment.new  %>
+  <%= render "comments/form" %>
+
+
 </article>
-<br><br><br><br><br><br>
+
+
+<br><br><br><br><br><br>  <br><br><br><br><br><br>
