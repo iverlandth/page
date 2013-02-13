@@ -33,6 +33,10 @@
   </script>
 </head>
 <body>
+<p id="notice"><%= notice %></p>
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
 <%= yield %>
 
 </body>
@@ -44,13 +48,14 @@
     <li id="tw"><a href="http://twitter.com/iverlandth" target="_blank">Twitter</a></li>
     <li id="gps"><a href=" https://plus.google.com/109531977658543006082" target="_blank">Google +</a></li>
 
-    <li><%= mail_to "iverherlandth@gmail.com", "Contact", :encode => "hex" %></li>
+    <li><%= link_to "Contact", :controller => "contactos", :action => "new" %></li>
     <li><%= link_to "Blog" %></li>
     <div class="cont-l">
       <div id="lavalamp"></div>
     </div>
   </ul>
   <h1><%= link_to "Iverlandth (イヴェール)", root_path %></h1>
+ <br>
   <h4> Dósis de Ruby on Rails, tecnología y demás </h4>
 
   <hr>

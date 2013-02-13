@@ -1,4 +1,7 @@
 Blogkyoir::Application.routes.draw do
+  resources :contactos
+
+
   resources :comments
 
 

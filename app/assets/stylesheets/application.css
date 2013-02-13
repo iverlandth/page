@@ -12,17 +12,28 @@
  *= require_tree .
 */
 body{
-  /*  background-image: url("bg.jpg");
-    color: #ffffff;      */
+   background: url("bg.jpg") scroll 0 0 ;
+    margin: 0px;
+    /* background-repeat: no-repeat;*/
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+
+
+    color: #ffffff;
+}
+#footerp  h1 a{
+    color: rgba(253, 158, 28, 0.90);
+    font-size: 45px;
+    float: left;
+    margin-top: -40px;
 }
 
 #footerp  h1 a:hover{
-    color: rgba(253, 151, 43, 0.91);
+    color: rgba(16, 171, 252, 0.90);
+    text-shadow: 2px 2px 2px black ;
 
 }
-h3{
-    color: #705c73;
-}
+
 #footerp{
     position: fixed !important;
     position: absolute;
@@ -46,8 +57,8 @@ h3{
 #footerp p{
     color: #ffffff;
     text-decoration: none;
-    margin-top: -8px;
     float: right;
+
 }
 #footerp a{
     color: #fff6f9;
@@ -69,9 +80,24 @@ h3{
 #gps a:hover{
     color: #b22222;
 }
-hr{
-    margin-top: -18px;
-    border-color: #aca6aa;
-    border-width: 1px;
+
+
+form input[type=number], form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=file], form input[type=tel], form textarea {
+
+    padding: 12px 12px 12px 30px;
+    font-weight: bolder;
+    margin: 0 0 2px 0;
+    width: 353px; /* 353 + 2 + 45 = 400 */
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+.container{
+    width: 940px;
+    margin: auto;
 }
 
