@@ -1,4 +1,26 @@
 Blogkyoir::Application.routes.draw do
+  get "tutorial/inicio"
+
+  get "tutorial/numeros"
+
+  get "tutorial/textos"
+
+  get "tutorial/variables"
+
+  get "tutorial/conversiones"
+
+  get "tutorial/metodos"
+
+  get "tutorial/controldeflujo"
+
+  get "tutorial/matrices"
+
+  get "tutorial/metodospropios"
+
+  get "tutorial/clases"
+
+  get "tutorial/bloquesyprocesos"
+
   resources :contactos
 
 

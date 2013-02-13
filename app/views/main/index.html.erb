@@ -2,7 +2,9 @@
 
 
   <ul id="control">
-    <li class="a"><div>Ruby on Rails (RoR) <%= link_to "instalación ", :controller=> :main , :action=> :iror %> <%= link_to "Primera aplicación", :controller=> :main , :action=> :sieapp %> </div>
+    <li class="a"><div>Ruby on Rails (RoR) <%= link_to "instalación ", :controller=> :main , :action=> :iror %> <%= link_to "Primera aplicación", :controller=> :main , :action=> :sieapp %>
+      <%= link_to "Ruby", :controller=> :tutorial , :action=> :inicio %>
+    </div>
 
       <%=  image_tag "Ruby_Programming_Icons_by_3nc.jpg", :size=>"560x480", :border=>"0" %>
 
@@ -31,6 +33,7 @@
     <div id="tick-lamp"></div>
   </ul>
 </div>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];

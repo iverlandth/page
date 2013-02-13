@@ -36,6 +36,12 @@
     -o-transition: all 200ms ease 0s;
 
 }
+#control li div a:hover{
+    font-size: 15px;
+
+
+}
+
 
 #control li:hover {
     background: #454545;
@@ -46,7 +52,7 @@
 #control li div {
     color: #CCC;
     display: table-cell;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     height: 79px;
     line-height: 16px;
@@ -73,6 +79,7 @@
 #control:hover li.a > img {
     opacity: 0;
     visibility: 0;
+
 }
 
 li.a:hover > img {

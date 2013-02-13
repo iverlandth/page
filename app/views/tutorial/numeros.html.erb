@@ -1,0 +1,156 @@
+<div id="readme" class="blob instapaper_body">
+  <article class="container" itemprop="mainContentOfPage"><h1>
+    <a name="n%C3%BAmeros" class="anchor" href="#n%C3%BAmeros"><span class="mini-icon mini-icon-link"></span></a>Números</h1>
+
+    <p>Ahora que tienes todo  <%= link_to "instalado" , :controller =>:main , :action => :iror  %>.,
+      ¡vamos a escribir un programa! Abre tu editor de texto favorito y escribe lo
+      siguiente:</p>
+
+<pre><code>puts 1+2
+</code></pre>
+
+    <p>Guarda tu programa (sí, ¡eso es un programa!) como <code>calc.rb</code>
+      (el <strong>.rb</strong> es lo que usualmente ponemos al final de
+      los programas escritos en Ruby). Ahora ejecuta tu programa escribiendo
+      <code>ruby calc.rb</code> en la línea de comandos. Deberías obtener un <code>3</code>
+      en tu pantalla. ¿Lo ves?, programar no es tan difícil, ¿cierto?</p>
+
+    <h2>
+      <a name="introducci%C3%B3n-a-puts" class="anchor" href="#introducci%C3%B3n-a-puts"><span class="mini-icon mini-icon-link"></span></a>Introducción a <code>puts</code>
+    </h2>
+
+    <p>¿Cómo es que funciona ese programa? Seguramente puedes adivinar qué es lo que
+      <code>1+2</code> hace; nuestro programa es básicamente lo mismo que:</p>
+
+<pre><code>puts 3
+</code></pre>
+
+    <p><code>puts</code> simplemente escribe en la pantalla lo que sea que escribamos a continuación.</p>
+
+    <h2>
+      <a name="enteros-y-flotantes" class="anchor" href="#enteros-y-flotantes"><span class="mini-icon mini-icon-link"></span></a>Enteros y flotantes</h2>
+
+    <p>En la mayoría de los lenguajes de programación (y Ruby no es la excepción)
+      los números sin decimales son llamados <em>enteros</em> (traducción de <em>integers</em> en
+      su versión en Inglés), y los números con punto decimal normalmente son llamados
+      <em>números de punto flotante</em> (o llamados sólo <em>flotantes</em> de ahora en adelante ya
+      que proviene de su original en inglés <em>floats</em>).</p>
+
+    <p>Aquí hay algunos enteros:</p>
+
+<pre><code>5
+  -205
+  9999999999999999999999999
+  0
+</code></pre>
+
+    <p>Y aquí hay algunos flotantes:</p>
+
+<pre><code>54.321
+  0.001
+  -205.3884
+  0.0
+</code></pre>
+
+    <p>En la práctica, la mayoría de los programas no usan flotantes, sólo enteros.
+      (Después de todo, nadie quiere leer 7.4 emails, o navegar 1.8 páginas,
+      o escuchar 5.24 de sus canciones favoritas...) Los flotantes se usan más con
+      propósitos académicos (como por ejemplo experimentos científicos) y para
+      gráficos en 3D. Incluso la mayoría de los programas financieros usan enteros,
+      ¡simplemente llevan un registro de los centavos!</p>
+
+    <h2>
+      <a name="aritm%C3%A9tica-simple" class="anchor" href="#aritm%C3%A9tica-simple"><span class="mini-icon mini-icon-link"></span></a>Aritmética simple</h2>
+
+    <p>Hasta ahora, tenemos todo lo que necesita una calculadora simple.
+      (Las calculadoras siempre usan flotantes, así que si
+      quieres que tu computadora actúe como una calculadora, también deberías
+      usar flotantes). Para suma y resta, usamos <code>+</code> y <code>-</code>, como ya lo vimos.
+      Para la multiplicación, usamos <code>*</code>, y para la división usamos
+      <code>/</code>. La mayoría de los teclados tienen estas teclas en el
+      teclado numérico a la derecha. Intentemos expandir un poco
+      nuestro programa <code>calc.rb</code>. Escribe lo siguiente y ejecútalo:</p>
+
+<pre><code>puts 1.0 + 2.0
+  puts 2.0 * 3.0
+  puts 5.0 - 8.0
+  puts 9.0 / 2.0
+</code></pre>
+
+    <p>Esto es lo que retorna el programa:</p>
+
+<pre><code>3.0
+  6.0
+  -3.0
+  4.5
+</code></pre>
+
+    <p>(Los espacios en el programa no son importantes; simplemente
+      hacen que el código sea más fácil de leer). Bueno, eso no
+      fue muy sorprendente. Ahora probemos con enteros:</p>
+
+<pre><code>puts 1+2
+  puts 2*3
+  puts 5-8
+  puts 9/2
+</code></pre>
+
+    <p>Básicamente lo misno, ¿no?</p>
+
+<pre><code>3
+  6
+  -3
+  4
+</code></pre>
+
+    <p>Uh... ¡excepto por el último!
+      Pero cuando se hace aritmética con enteros, se obtienen enteros.
+      Cuando tu computadora no puede obtener la respuesta "correcta",
+      siempre redondea hacia abajo (Por supuesto, <code>4</code> <em>es</em>
+      la respuesta correcta en aritmética con enteros para <code>9/2</code>;
+      simplemente tal vez no sea el resultado que esperaba).</p>
+
+    <p>Tal vez te preguntes para qué es útil la división entera. Bueno, digamos
+      que va al cine, pero sólo tiene $9. Aquí en Portland, puede ver una
+      película en el Bagdad por $2. ¿Cuántas películas puede ver allí?
+      <code>9/2</code>... <code>4</code> películas. 4.5 definitivamente <em>no</em>
+      es la respuesta correcta ya que no le dejarán ver la mitad de
+      una película o dejar que una mitad suya vea la película entera...
+      algunas cosas simplemente no son divisibles.</p>
+
+    <p>¡Así que ahora experimenta con algunos programas por tu cuenta!
+      Si quiere escribir expresiones más complejas, puede usar paréntesis.
+      Por ejemplo:</p>
+
+    <p><em>Código:</em></p>
+
+<pre><code>puts 5 * (12-8) + -15
+  puts 98 + (59872 / (13*8)) * -52
+</code></pre>
+
+    <p><em>Resultado:</em></p>
+
+<pre><code>5
+  -29802
+</code></pre>
+
+    <h2>
+      <a name="algunas-cosas-por-intentar" class="anchor" href="#algunas-cosas-por-intentar"><span class="mini-icon mini-icon-link"></span></a>Algunas cosas por intentar</h2>
+
+    <p>Escribe un programa que te diga:</p>
+
+    <ul>
+      <li>¿cuántas horas hay en un año?</li>
+      <li>¿cuántos minutos hay en una década??</li>
+      <li>¿cuántos segundos de edad tiene usted?</li>
+      <li>¿cuántos chocolates espera comer en su vida?</li>
+      <li>
+        <strong>Advertencia:</strong> ¡Esta parte del programa puede tomar tiempo para computarse!</li>
+    </ul><p>Aquí hay una pregunta más difícil:</p>
+
+    <ul>
+      <li>Si tengo 1031 millones de segundos de edad, ¿cuántos años tengo?</li>
+    </ul><p>Cuando termine de jugar con números, echemos un vistazo
+    a algunos <%= link_to "Textos" , :controller => "tutorial", :action => "textos" %>.</p></article>
+</div>
+<br><br><br><br><br><br><br><br>
