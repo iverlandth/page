@@ -85,7 +85,7 @@ body{
 form input[type=number], form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=file], form input[type=tel], form textarea {
 
     padding: 12px 12px 12px 30px;
-    font-weight: bolder;
+
     margin: 0 0 2px 0;
     width: 353px; /* 353 + 2 + 45 = 400 */
     border: 1px solid #ccc;
@@ -99,5 +99,6 @@ form input[type=number], form input[type=text], form input[type=password], form 
 .container{
     width: 940px;
     margin: auto;
+    color: #ffffff;
 }
 
