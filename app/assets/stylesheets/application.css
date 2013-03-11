@@ -89,21 +89,138 @@ body{
     color: #b22222;
 }
 
-
+/*
 form input[type=number], form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=file], form input[type=tel], form textarea {
 
     padding: 6px 6px 6px 15px;
 
     margin: 0 0 2px 0;
-    width: 353px; /* 353 + 2 + 45 = 400 */
+    width: 353px;
 
     -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
     -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
     box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-}
+}   */
 .container{
     width: 940px;
     margin: auto;
     color: #ffffff;
 }
+
+
+/* line 82, /app/views/common.sass */
+hr {
+    background: #17171e;
+    border: none;
+    -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
+    -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
+    -o-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
+    height: 3px;
+    margin: 36px 0;
+}
+
+/* line 92, /app/views/common.sass*/
+.fieldWithErros input[type="text"],
+.fieldWithErrors input[type="password"],
+.fieldWithErros input[type="email"],
+.fieldWithErrors textarea,
+.error input[type="text"],
+.error input[type="password"],
+.error textarea {
+    border-bottom: 1px solid #ff2b6e;
+    color: #ffd1e3;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #080813), color-stop(100%, #39101d));
+    background: -webkit-linear-gradient(top, #080813, #39101d);
+    background: -moz-linear-gradient(top, #080813, #39101d);
+    background: -o-linear-gradient(top, #080813, #39101d);
+    background: -ms-linear-gradient(top, #080813, #39101d);
+    background: linear-gradient(top, #080813, #39101d);
+}
+
+/* line 104, /app/views/common.sass */
+input[type="text"],
+textarea {
+    background: #0d0e13;
+    border: 1px solid black;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+    -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+    -o-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+    color: #f0f0ff;
+    display: block;
+    font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
+    font-size: 13px;
+    padding: 10px 8px;
+    width: 384px;
+}
+/* line 118, /app/views/common.sass */
+input[type="text"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #494b63;
+}
+/* line 121, /app/views/common.sass */
+input[type="text"]:focus,
+textarea:focus {
+    background: url("/images/input-focus-bg.png") bottom repeat-x, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #070812), color-stop(100%, #253e5c));
+    background: url("/images/input-focus-bg.png") bottom repeat-x, -webkit-linear-gradient(top, #070812 50%, #253e5c);
+    background: url("/images/input-focus-bg.png") bottom repeat-x, -moz-linear-gradient(top, #070812 50%, #253e5c);
+    background: url("/images/input-focus-bg.png") bottom repeat-x, -o-linear-gradient(top, #070812 50%, #253e5c);
+    background: url("/images/input-focus-bg.png") bottom repeat-x, -ms-linear-gradient(top, #070812 50%, #253e5c);
+    background: url("/images/input-focus-bg.png") bottom repeat-x, linear-gradient(top, #070812 50%, #253e5c);
+    border-color: black;
+    color: #a5d1f8;
+    outline: none;
+}
+/* line 127, /app/views/common.sass */
+input[type="text"]:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+    color: #68829d;
+}
+
+/* line 130, /app/views/common.sass
+input[type="submit"] {
+    background: #858597;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e7e9), color-stop(100%, #afb0b4));
+    background: -webkit-linear-gradient(top, #e6e7e9, #afb0b4);
+    background: -moz-linear-gradient(top, #e6e7e9, #afb0b4);
+    background: -o-linear-gradient(top, #e6e7e9, #afb0b4);
+    background: -ms-linear-gradient(top, #e6e7e9, #afb0b4);
+    background: linear-gradient(top, #e6e7e9, #afb0b4);
+    border: none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
+    color: #0f0e13;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+*/
+/* line 149, /app/views/common.sass
+input[type="submit"] {
+    width: 202px;
+}*/
+/* line 152, /app/views/common.sass
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+*/
 
