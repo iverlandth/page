@@ -1,4 +1,5 @@
 Blogkyoir::Application.routes.draw do
+  get "main/git"
   get "tutorial/inicio"
 
   get "tutorial/numeros"
