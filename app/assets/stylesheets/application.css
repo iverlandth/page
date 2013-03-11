@@ -102,7 +102,7 @@ form input[type=number], form input[type=text], form input[type=password], form 
     box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
 }   */
 .container{
-    width: 940px;
+    width: 90%;
     margin: auto;
     color: #ffffff;
 }
