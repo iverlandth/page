@@ -1,0 +1,627 @@
+<div id="readme" class="blob instapaper_body">
+<article class="container" itemprop="mainContentOfPage"><h1>
+  <a name="clases" class="anchor" href="#clases"><span class="mini-icon mini-icon-link"></span></a>Clases</h1>
+
+<p>Hasta ahora hemos visto diferentes tipos o <em>clases</em> de objetos:
+  textos, enteros, flotantes, matrices, y algunos objetos especiales
+  (<code>true</code>, <code>false</code> y <code>nil</code>) de los cuales hablaremos más tarde.
+  En Ruby, estas clases están siempre en mayúsculas: <code>String</code>, <code>Integer</code>,
+  <code>Float</code>, <code>Array</code> ... etc. En general, si queremos crear un nuevo
+  objeto de una cierta clase, usamos <code>new</code>:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>a = Array.new + [12345] # Array agregado.
+  b = String.new + 'hello' # String agregado.
+  c = Time.new
+
+  puts 'a = '+a.to_s
+  puts 'b = '+b.to_s
+  puts 'c = '+c.to_s
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>a = [12345]
+  b = hello
+  c = 2012-06-01 12:52:06 -0500
+</code></pre>
+
+<p>Porque podemos crear matrices y textos usando <code>[...]</code> y <code>' ... '</code>
+  respectivamente es que rara vez los creamos usando <code>new</code>. (Aunque
+  no es muy evidente en el ejemplo anterior, <code>String.new</code> crea una
+  cadena vacía y <code>Array.new</code> crea una matriz vacía) También, los
+  números son excepciones especiales: no se puede crear un número
+  entero con <code>Integer.new</code> . Sólo tienes que escribir el número entero.</p>
+
+<h2>
+  <a name="la-clase-time" class="anchor" href="#la-clase-time"><span class="mini-icon mini-icon-link"></span></a>La
+  clase <code>Time</code>
+</h2>
+
+<p>Entonces, ¿cuál es la historia con la clase <code>Time</code>?. Los objetos <code>Time</code>
+  representan momentos en el tiempo. Usted puede sumar (o restar) números a
+  (o desde) para obtener los nuevos tiempos: la adición de <code>1.5</code>
+  a un tiempo hace un tiempo nuevo segundo y medio más tarde:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>hora = Time.new # El momento que se ejecutó esta código
+  hora2 = hora + 60 # Un minuto más tarde.
+
+  puts hora
+  puts hora2
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>2012-06-01 12:55:49 -0500
+  2012-06-01 12:56:49 -0500
+</code></pre>
+
+<p>También puedes obtener el tiempo para un momento específico utilizando <code>Time.mktime</code>:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>puts Time.mktime(2000, 1, 1) # Y2K.
+  puts Time.mktime(1976, 8, 3, 10, 11) # Cuando nació Chris.
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>2000-01-01 00:00:00 -0500
+  1976-08-03 10:11:00 -0500
+</code></pre>
+
+<p>Nota: yo nací en el horario de verano del Pacífico (PDT).
+  Cuando se presentó el problema del año 2000, sin embargo, era hora
+  estándar del Pacífico (PST), por lo menos para nosotros los de la
+  Costa Oeste. Los paréntesis son para agrupar los parámetros a <code>mktime</code>.
+  Los parámetros adicionales hacen más preciso el tiempo obtenido.</p>
+
+<p>Puedes comparar los tiempos usando los métodos de comparación
+  (un tiempo anterior es <em>menos que</em> un tiempo posterior), y si se resta
+  un tiempo de otro obtendrás el número de segundos entre ellos. Juega un poco con él!</p>
+
+<h2>
+  <a name="algunas-cosas-para-probar" class="anchor" href="#algunas-cosas-para-probar"><span class="mini-icon mini-icon-link"></span></a>Algunas
+  cosas para probar</h2>
+
+<ul>
+  <li><p>Mil millones de segundos ... Descubre el segundo exacto en que naciste
+    (si puedes). Averigua cuando tendrás (o tal vez cuando tuviste?) mil millones
+    de segundos de edad, luego marcalo en tu calendario.</p></li>
+  <li><p>¡Feliz cumpleaños! Pregunta en qué año nació una persona, luego el mes, y luego el día.
+    Calcula la edad que tiene y dale una gran ´¡NALGADA!´ por cada cumpleaños que ha tenido.</p></li>
+</ul>
+<h2>
+  <a name="la-clasehash" class="anchor" href="#la-clasehash"><span class="mini-icon mini-icon-link"></span></a>La
+  clase<code>Hash</code>
+</h2>
+
+<p>Otra clase muy útil es <code>Hash</code>. Los valores hash son muy parecidos a
+  las matrices: tienen un montón de ranuras que pueden apuntar a objetos diferentes.
+  Sin embargo, en una matriz, las ranuras están alineados en una fila y cada uno
+  está numerado (empezando de cero). En un <code>hash</code>, las ranuras no están en una fila
+  (que es sólo un tipo de mezcla), y se puede utilizar <em>cualquier</em> objeto
+  para hacer referencia a un espacio no sólo un número. Es bueno utilizar
+  hashes cuando se tiene un montón de cosas que no se desea perder de vista,
+  pero que en realidad no encajan en una lista ordenada. Por ejemplo los colores que
+  yo uso para las diferentes partes del código con las que he creado este tutorial:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>colorArray = [] # igual a Array.new
+  colorHash = {} # igual a Hash.new
+
+  colorArray[0] = '#FF0000'
+  colorArray[1] = '#008000'
+  colorArray[2] = '#0000FF'
+  colorHash['textos '] = '#FF0000' # rojo
+  colorHash['numeros'] = '#008000' # verde
+  colorHash['claves '] = '#0000FF' # azul
+
+  colorArray.each do |color|
+  puts color
+  end
+  colorHash.each do |tipoCodigo, color|
+  puts tipoCodigo + ' : ' + color
+  end
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>#FF0000
+  #008000
+  #0000FF
+  textos : #FF0000
+  numeros : #008000
+  claves : #0000FF
+</code></pre>
+
+<p>Si utilizo una matriz, tengo que recordar que la ranura <code>0</code> es para las textos,
+  la ranura <code>1</code> es para los números, etc, pero si puedo usar un hash, ¡es muy fácil!
+  Ranura <code>' textos '</code> mantiene el color de las cadenas, por supuesto. No hay
+  nada que recordar. Puedes haber notado que cuando se utiliza <code>each</code>
+  los objetos en el hash no vienen en el mismo orden en que los pusiste adentro. (Al menos
+  no lo hacían cuando escribí esto. Pueden que lo hagan ahora... nunca se sabe con los hashes).
+  Matrices son para mantener las cosas en orden, no hashes.</p>
+
+<p>Aunque la gente suele utilizar textos para nombrar las ranuras de un hash, se
+  puede utilizar cualquier tipo de objeto, incluso las matrices y los hashes de
+  otros (aunque yo no puedo pensar en por qué querría hacer esto ...):</p>
+
+<pre><code>weirdHash = Hash.new
+
+  weirdHash[12] = 'monos'
+  weirdHash[[]] = 'el vacío'
+  weirdHash[Time.new] = 'ningun momento como el actual'
+</code></pre>
+
+<p>Hashes y matrices son buenos para cosas diferentes, depende de ti decidir cuál
+  es el mejor para un problema particular.</p>
+
+<h2>
+  <a name="extendiendo-las-clases" class="anchor" href="#extendiendo-las-clases"><span class="mini-icon mini-icon-link"></span></a>Extendiendo
+  las clases</h2>
+
+<p>Al final del último capítulo escribiste un método para decir la frase en español
+  de un número entero. No era un método de número entero, sin embargo;
+  fue sólo un método genérico de un "programa". ¿No sería agradable si pudieras
+  escribir algo como <code>22.to_esp</code> en lugar de <code>numeroEspanol 22</code>?. He aquí cómo harías eso:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>class Integer
+  def to_esp
+  if self == 5
+  espanol = 'cinco'
+  else
+  espanol = 'cincuenta y ocho'
+  end
+
+  espanol
+  end
+  end
+
+  # Mejor probarlo en un par de números...
+  puts 5.to_esp
+  puts 58.to_esp
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>cinco
+  cincuenta y ocho
+</code></pre>
+
+<p>Bueno, lo he probado y parece que funciona. ;)</p>
+
+<p>Por lo tanto, definimos un método del número entero ingresando en la clase <code>Integer</code>,
+  definiendo el método allí y saliendo luego. Ahora todos los números enteros tienen
+  este (algo incompleto) método. De hecho, si no te gusta la forma en que el método
+  <code>to_s</code> trabaja, lo podrías definir en gran parte de la misma manera ... pero ¡yo no
+  lo recomiendo! Lo mejor es dejar los viejos métodos y hacer otros nuevos cuando
+  se quiere hacer algo nuevo.</p>
+
+<p>Así que ... ¿confundido? Permiteme explayarme más en ese último programa.
+  Hasta ahora, cada vez que ejecutabas cualquier código o cualquier otro método definido se
+  hacía por omisión en el "programa" del objeto. En nuestro último programa,
+  dejamos el objeto por primera vez y se fuimos a la clase <code>Integer</code>. Se definió
+  un método allí (lo que lo convierte en un método de número entero) y que todos
+  los números enteros pueden utilizar. Dentro de ese método se utiliza <code>self</code> para
+  referirse al objeto (el entero) utilizando el método.</p>
+
+<h2>
+  <a name="creando-clases" class="anchor" href="#creando-clases"><span class="mini-icon mini-icon-link"></span></a>Creando
+  clases</h2>
+
+<p>Hemos visto diferentes clases de objetos. Sin embargo, es fácil
+  llegar a los tipos de objetos que Ruby no tiene. Por suerte, la
+  creación de una nueva clase es tan fácil como la ampliación de una antigua.
+  Digamos que hemos querido hacer algunos dados en Ruby. Así es como podemos
+  hacer la clase Dado:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>class Dado
+
+  def roll
+  1 + rand(6)
+  end
+
+  end
+
+  # Vamos a crear un par de dados...
+  dados = [Dado.new, Dado.new]
+
+  # ...y hacerlos rodar.
+  dados.each do |dado|
+  puts dado.roll
+  end
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>3
+  4
+</code></pre>
+
+<p>(Si se ha saltado la sección de números aleatorios, <code>rand(6)</code>
+  sólo da un número aleatorio entre 0 y 5 .)
+  ¡Y eso es todo! Nuestro propios objetos. Tira los dados
+  un par de veces (con el botón de recarga) y mira lo que
+  aparece.</p>
+
+<p>Podemos definir todo tipo de métodos para los objetos ... pero hay algo
+  que falta. Trabajar con estos objetos se parece mucho a la programación
+  antes de aprender acerca de las variables. ¡Mira los dados!, por ejemplo.
+  Podemos rodarlos y cada vez nos dan números diferentes. Pero si
+  quería guardar alguno de estos números habría que crear una variable que apunte
+  al número.
+  Parece que cualquier dado decente debe ser capaz de <em>tener</em> un número,
+  y que rodando el dado nuevamente el número debe cambiar. Si hacemos un
+  seguimiento del dado debemos tener también un registro del número mostrado.</p>
+
+<p>Sin embargo, si tratamos de guardar el número que salió en una variable
+  (local) <code>roll</code> habrá desaparecido tan pronto como <code>roll</code> haya terminado.
+  Tenemos que guardar el número en un tipo diferente de variable.</p>
+
+<h2>
+  <a name="variables-de-instancia" class="anchor" href="#variables-de-instancia"><span class="mini-icon mini-icon-link"></span></a>Variables
+  de instancia</h2>
+
+<p>Normalmente cuando queremos hablar de un texto, nos limitaremos a llamar a
+  un <em>texto</em>. Sin embargo, también podría llamar un <em>objeto de texto</em>. Sin
+  embargo, los programadores podrían llamar <em>una instancia de la clase <code>String</code></em>,
+  pero esto es sólo una manera de representar a <em>texto</em>. Una <em>instancia</em> de una clase
+  es sólo un objeto de esa clase.</p>
+
+<p>Por lo tanto las variables de instancia son variables de un objeto. Las
+  variables locales de un método viven hasta que el método ha terminado. Las
+  variables de instancia de un objeto, por otro lado, duran tanto como el objeto.
+  Para diferenciar las variables de instancia de las variables locales,
+  ellos tienen <code>@</code> delante de sus nombres:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>class Dado
+
+  def rodar
+  @numeroMostrado = 1 + rand(6)
+  end
+
+  def mostrar
+  @numeroMostrado
+  end
+
+  end
+
+  dado = Dado.new
+  dado.rodar
+  puts dado.mostrar
+  puts dado.mostrar
+  dado.rodar
+  puts dado.mostrar
+  puts dado.mostrar
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>1
+  1
+  5
+  5
+</code></pre>
+
+<p>¡Muy bien!. <code>rodar</code> rueda el dado y <code>mostrar</code> nos dice el número que muestra.
+  Sin embargo, que pasa si tratamos de mostrar lo que existía antes de rodar el dado
+  (antes de que lo hayamos guardado en <code>@numeroMostrado</code>)</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>class Dado
+
+  def rodar
+  @nummeroMostrado = 1 + rand(6)
+  end
+
+  def mostrar
+  @numeroMostrado
+  end
+
+  end
+
+  # Ya que no voy a usar esta dado de nuevo,
+  # No es necesario guardarlo en una variable.
+  puts Dado.new.mostrar
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>nil
+</code></pre>
+
+<p>Hmmm ... bueno, al menos no nos muestra un error. Aún así, no tiene mucho
+  sentido para un dado "no rodado" mostrar <code>nil</code> o lo que sea que se supone
+  que significa. Sería bueno si pudiéramos dar un valor cuando nuestro objeto
+  Dado es creado. Para esto esta <code>initialize</code>:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>class Dado
+
+  def initialize
+  # Voy a tirar el dado, a pesar de que
+  # podria hacer otra cosa si quisieramos
+  rodar
+  end
+
+  def rodar
+  @numeroMostrado = 1 + rand(6)
+  end
+
+  def mostrar
+  @numeroMostrado
+  end
+
+  end
+
+  puts Dado.new.mostrar
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>6
+</code></pre>
+
+<p>Cuando se crea un objeto, su método <code>initialize</code> (si se ha definido
+  uno) siempre es llamado.
+  Nuestros dados son casi perfectos. La única cosa que podría hacer falta
+  es una manera de decirle que lado del dado debe mostrar... ¿Por
+  qué no escribir un método <code>timo</code> que hace justamente eso! Vuelve cuando
+  hayas terminado (y que haya funcionado por supuesto). Asegúrese de que
+  nadie pueda obtener un <code>7</code> con el dado!</p>
+
+<p>Hay varios temas interesante que apenas hemos revisado. Es difícil, sin
+  embargo te voy a dar otro ejemplo más interesante. Digamos que queremos
+  hacer una mascota virtual sencilla, un dragón bebé. Como la mayoría de los
+  bebés debe ser capaz de comer, dormir y hacer sus necesidades, lo que
+  significa que tendremos que ser capaces de darle de comer, de ponerlo en la
+  cama y llevarlo a pasear. Internamente, nuestro dragón tendrá que realizar
+  una verificación de si tiene hambre, está cansado o tiene que ir al baño
+  pero no vamos a ser capaces de ver su estado cuando nos relacionamos con
+  nuestro dragón al igual que no se puede preguntar a un bebé humano, "¿Tienes
+  hambre?". También vamos a añadir algunas otras maneras divertidas de
+  interactuar con nuestro dragón bebé y cuando nace le daremos un nombre.
+  (Lo que sea que pasen al método <code>new</code> al método <code>initialize</code>).
+  Muy bien, continuemos:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>class Dragon
+
+  def initialize nombre
+  @nombre = nombre
+  @dormido = false
+  @panzaLlena = 10 # Esta lleno.
+  @intestinoLleno = 0 # No necesita ir.
+
+  puts @nombre + ' nace.'
+  end
+
+  def alimentar
+  puts 'Alimentas a ' + @nombre + '.'
+  @panzaLlena = 10
+  pasoDelTiempo
+  end
+
+  def caminar
+  puts 'Haces caminar a ' + @nombre + '.'
+  @intestinoLleno = 0
+  pasoDelTiempo
+  end
+
+  def dormir
+  puts 'Colocas a ' + @nombre + ' en la cama.'
+  @dormido = true
+  3.times do
+  if @dormido
+  pasoDelTiempo
+  end
+  if @dormido
+  puts @nombre + ' ronca, llenando el cuarto con humo.'
+  end
+  end
+  if @dormido
+  @dormido = false
+  puts @nombre + ' despierta lentamente.'
+  end
+  end
+
+  def lanzar
+  puts 'Lanzas a ' + @nombre + ' en el aire.'
+  puts 'Sonrie, sus cejas se mueven.'
+  pasoDelTiempo
+  end
+
+  def acunar
+  puts 'Acunas a ' + @nombre + ' suavemente.'
+  @dormido = true
+  puts 'Rapidamente se queda dormido...'
+  pasoDelTiempo
+  if @dormido
+  @dormido = false
+  puts '...pero despierta cuando te detienes.'
+  end
+  end
+
+  private
+
+  # "private" significa que los metodos definidos aqui son
+  # metodos internos al objeto. (Puedes alimentar a
+  # tu dragon, pero no puedes preguntar si esta hambriento.)
+
+  def hambriento?
+  # Los nombres de los metodos pueden terminar en "?".
+  # Generalmente, hacemos esto si el método debe
+  # devolver verdadero o falso, como esto:
+  @panzaLlena &lt;= 2
+  end
+
+  def ganas?
+  @intestinoLleno &gt;= 8
+  end
+
+  def pasoDelTiempo
+  if @panzaLlena &gt; 0
+  # Mueve el alimento del vientre al intestino.
+  @panzaLlena = @panzaLlena - 1
+  @intestinoLleno = @intestinoLleno + 1
+  else # Nuestro dragon esta hambriento!
+  if @dormido
+  @dormido = false
+  puts '¡Se despierta de repente!'
+  end
+  puts '¡' + @nombre + ' esta hambriento! En su desesperacion, ¡te COMIO!'
+  exit # Sale del programa.
+  end
+
+  if @intestinoLleno &gt;= 10
+  @intestinoLleno = 0
+  puts '¡Uy! ' + @nombre + ' tuvo un accidente...'
+  end
+
+  if hambriento?
+  if @dormido
+  @dormido = false
+  puts '¡Se despierta de repente!'
+  end
+  puts 'El estomago de ' + @nombre + 'retumba...'
+  end
+
+  if ganas?
+  if @dormido
+  @dormido = false
+  puts 'Se despierta de repente!'
+  end
+  puts @nombre + ' hace la danza del baño...'
+  end
+  end
+
+  end
+
+  mascota = Dragon.new 'Norbert'
+  mascota.alimentar
+  mascota.lanzar
+  mascota.caminar
+  mascota.dormir
+  mascota.acunar
+  mascota.dormir
+  mascota.dormir
+  mascota.dormir
+  mascota.dormir
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>Norbert nace.
+  Alimentas a Norbert.
+  Lanzas a Norbert en el aire.
+  Sonrie, sus cejas se mueven.
+  Haces caminar a Norbert.
+  Colocas a Norbert en la cama.
+  Norbert ronca, llenando el cuarto con humo.
+  Norbert ronca, llenando el cuarto con humo.
+  Norbert ronca, llenando el cuarto con humo.
+  Norbert despierta lentamente.
+  Acunas a Norbert suavemente.
+  Rapidamente se queda dormido...
+  ...pero despierta cuando te detienes.
+  Colocas a Norbert en la cama.
+  ¡Se despierta de repente!
+  El estomago de Norbertretumba...
+  Colocas a Norbert en la cama.
+  ¡Se despierta de repente!
+  El estomago de Norbertretumba...
+  Colocas a Norbert en la cama.
+  ¡Se despierta de repente!
+  El estomago de Norbertretumba...
+  Norbert hace la danza del baño...
+  Colocas a Norbert en la cama.
+  ¡Se despierta de repente!
+  ¡Norbert esta hambriento! En su desesperacion, ¡te COMIO!
+</code></pre>
+
+<p><em>¡Ouau!</em> Por supuesto, sería mejor si fuese un programa interactivo,
+  pero puedes modificarlo. Yo sólo estaba tratando de mostrarte las partes
+  relacionadas directamente con la creación de una nueva clase de dragón.</p>
+
+<p>Vimos algunas cosas nuevas en ese ejemplo. La primera es simple: <code>exit</code>
+  termina el programa en ese mismo momento. La segunda es la
+  palabra <code>private</code>, que pusimos en la definición de nuestra clase.
+  Podría haberlos mantenido afuera, pero yo quería reforzar la idea
+  de que hay ciertos métodos que hacen cosas que puede hacer un dragón
+  y otros que simplemente se establecen dentro el dragón. Usted puede
+  pensar en ellos como "bajo el capó": a menos que seas un mecánico de automóviles
+  todo lo que necesitas saber es el pedal del acelerador, el pedal del
+  freno y el volante. Un programador puede llamar a esto <em>interfaz pública</em> del
+  automóvil. Sin embargo, cómo saber cuando la bolsa de aire se activará es algo
+  interno del automóvil, el usuario típico (el conductor) no tiene por qué saberlo.</p>
+
+<p>En realidad, para un ejemplo más concreto en ese sentido vamos a hablar
+  sobre cómo se podría representar un coche en un videojuego (que pasa a ser
+  mi línea de trabajo). En primer lugar, tienes que decidir como deseas
+  que tu interfaz pública se parezca, es decir, los métodos de la gente
+  debería ser capaz de llamar por cada uno de los objetos de su coche.
+  Bueno, tienes que ser capaz de empujar el pedal del acelerador y el
+  pedal de freno, pero que también tienes que ser capaz de especificar lo
+  fuerte que estás empujando el pedal. (Hay una gran diferencia entre pisar y
+  golpear) También tendrías que ser capaz de dirigir el timón, y otra vez,
+  tendrías que ser capaz de decir lo mucho que estás moviendo la rueda del
+  timón. Supongo que se podría ir más allá y añadir un embrague, direccionales,
+  lanzacohetes, cámara de post-combustión, condensador de flujo, etc ..
+  depende del tipo de juego que estás haciendo.</p>
+
+<p>Internamente al objeto coche, sin embargo, tendríamos que hacer mucho más
+  cosas; otras cosas que necesita un coche son una velocidad, una dirección
+  y una posición (que son las cosas más básicas). Estos atributos se
+  modificarían pulsando sobre el gas o los pedales de freno y girando la rueda,
+  pero el usuario no sería capaz de establecer la posición directamente (que
+  sería como una deformación). Usted también podría patinar o dañar si se ha
+  volcado y así sucesivamente. Todo esto sería interno a su objeto coche.</p>
+
+<h2>
+  <a name="algunas-cosas-por-intentar" class="anchor" href="#algunas-cosas-por-intentar"><span class="mini-icon mini-icon-link"></span></a>Algunas
+  cosas por intentar</h2>
+
+<ul>
+  <li><p>Hacer una clase <code>arbolNaranja</code>. Deberá tener un método <code>altura</code> que devuelve su altura
+    y un método <code>paso365Dias</code> que cuando se le llama aumenta la edad del árbol en un año.
+    Cada año crece el árbol más alto (mucho más de lo que piensas que un naranjo debe crecer en un año),
+    y después de un cierto número de años (de nuevo, tu llamada) el árbol debe morir.
+    En los primeros años el árbol no debe producir fruta, pero después de un tiempo debería hacerlo,
+    y supongo que los árboles más viejos producen más cada año que los árboles más jóvenes ...
+    lo que pienses que tiene más sentido. Y, por supuesto, tú deberás ser capaz de
+    <code>contarNaranjas</code> (que devuelve el número de naranjas en el árbol), y <code>tomarUnaNaranja</code> (que
+    reduce la <code>@numeroNaranjas</code>en uno y devuelve un texto que te dice cómo la naranja era deliciosa,
+    o de lo contrario sólo te dice que no hay naranjas más para elegir este año) Asegúrate
+    que las naranjas que no se recogen en un año se caen antes del próximo año.</p></li>
+  <li><p>Escribir un programa para que pueda interactuar con tu bebé dragón. Deberás
+    ser capaz de introducir comandos como <code>alimentar</code> y <code>caminar</code>, y hacer que esos métodos se
+    llamen en tu dragón. Por supuesto, ya que lo que estás ingresando son sólo textos,
+    tendrás que tener algún tipo de <em>método de envío</em>, donde el programa revise los textos
+    que se han ingresado y luego llama al método adecuado.</p></li>
+</ul>
+<p>¡Y eso es casi todo lo que hay que hacer! Pero espera un segundo ...
+  Yo no he hablado de ninguna de esas clases para hacer cosas como enviar un
+  correo electrónico o guardar y cargar archivos en el computador, o cómo crear ventanas
+  y botones, o los mundos en 3D, ¡ni nada! Bueno, hay <em>tantas</em> clases que pueden utilizar
+  que no es posible mostrar a todos, ¡yo no conozco la mayoría de ellos! Lo <em>que</em> puedo
+  decir es que para saber más sobre ellos tienen que saber acerca de los que deseas que el
+  programa haga. Antes de terminar hay una característica más de Ruby que deberás conocer,
+  algo que la mayoría de lenguajes de programación no tiene pero sin las cuales
+  simplemente no podría vivir:
+  <%= link_to "bloques y procedimientos", :controller => :ruby, :action => :bloquesyprocesos %>.</p></article>
+</div>
+<br><br><br><br><br><br><br><br>

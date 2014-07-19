@@ -1,0 +1,242 @@
+<div id="readme" class="blob instapaper_body">
+<article class="container" itemprop="mainContentOfPage"><h1>
+  <a name="mezclando" class="anchor" href="#mezclando"><span class="mini-icon mini-icon-link"></span></a>Mezclando</h1>
+
+<p>Hemos revisado distintos tipos de objetos (<%= link_to "números", :controller => :ruby, :action => :numeros %>
+  y <%= link_to "texto", :controller => :ruby, action => :textos %>)
+  y hemos hecho que <%= link_to "variables", :controller => :tutorial, :ruby => :variables %>
+  apunten a ellos; lo que queremos hacer después es que funcionen todos juntos.</p>
+
+<p>Hemos visto que si queremos que un programa imprima <code>25</code>, lo que sigue <strong><em>no</em></strong>
+  funciona, porque no puedes sumar números y texto:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>var1 = 2
+  var2 = '5'
+
+  puts var1 + var2
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>in `+': String can't be coerced into Fixnum (TypeError)
+</code></pre>
+
+<p>Parte del problema es que tu computadora no sabe si estabas tratando de obtener <code>7</code>
+  (<code>2 + 5</code>) o si querías obtener <code>'25'</code> (<code>'2' + '5'</code>).</p>
+
+<p>Antes de poderlos sumar, necesitamos alguna forma de conseguir la representación
+  textual (en 'letras') de <code>var1</code>, o la representación numérica de <code>var2</code>.</p>
+
+<h2>
+  <a name="conversiones" class="anchor" href="#conversiones"><span class="mini-icon mini-icon-link"></span></a>Conversiones
+</h2>
+
+<p>Para obtener la representación en texto de un objeto, simplemente escribiendo <code>.to_s</code>
+  después de el objeto:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>var1 = 2
+  var2 = '5'
+
+  puts var1.to_s + var2
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>25
+</code></pre>
+
+<p>De la misma manera, <code>to_i</code> devuelve la versión numérica entera de un objeto y <code>to_f</code>
+  devuelve la versión de punto flotante, o sea la que lleva decimales. Veamos que hacen
+  estos tres métodos (y lo que <em>no</em> hacen) un poco más de cerca:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>var1 = 2
+  var2 = '5'
+
+  puts var1.to_s + var2
+  puts var1 + var2.to_i
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>25
+  7
+</code></pre>
+
+<p>Nota que, inclusive después de que obtuvimos la versión en texto de <code>var1</code> al llamar
+  <code>to_s</code>, <code>var1</code> siempre apuntó a <code>2</code>, y nunca a <code>'2'</code>. A menos que
+  reasignes
+  explícitamente <code>var1</code> (lo que requiere de un signo <code>=</code>), apuntará a <code>2</code> durante la
+  duración del programa.</p>
+
+<p>Ahora probemos conversiones más interesantes (y un poco raras):</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>puts '15'.to_f
+  puts '99.999'.to_f
+  puts '99.999'.to_i
+  puts '5 es mi numero favorito.'.to_i
+  puts '¿Quién pregunta acerca de 5 o lo que sea?'.to_i
+  puts 'Tu mamá hizo.'.to_f
+  puts 'fibroso'.to_s
+  puts 3.to_i
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>15.0
+  99.999
+  99
+  5
+  0
+  0.0
+  fibroso
+  3
+</code></pre>
+
+<p>Ésto probablemente te ha sorprendido un poco. El primero es bastante estándar,
+  devolviendo <code>15.0</code>. Después de eso, convertimos el texto <code>'99.999'</code> a un número de
+  punto flotante y a un entero. El primero hizo lo que esperábamos; el entero fue,
+  como siempre, redondeado hacia abajo.</p>
+
+<p>Luego, tuvimos ejemplos de algunos textos... <em>inusuales</em> ... convertidos a números
+  <code>to_i</code> ignora lo primero que no entienda, y el resto del texto a partir de ahí. Así
+  que lo primero va a ser convertido a <code>5</code>, pero los otros, ya que comenzaban con letras,
+  fueron ignorados completamente... así que la computadora simplemente elige usar cero.</p>
+
+<p>Finalmente, vimos que las últimas dos conversiones no hacían nada, tal como
+  esperábamos.</p>
+
+<p>Hay algo extraño en nuestro método favorito... Mira esto:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>puts 20
+  puts 20.to_s
+  puts '20'
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>20
+  20
+  20
+</code></pre>
+
+<p>¿Por qué estas tres líneas retornan el mismo resultado? Bueno, las últimas dos deberían,
+  ya que <code>20.to_s</code> <em>es</em> <code>'20'</code>. Pero, ¿qué pasa con la primera, el entero <code>20</code>?
+  Para tal
+  caso, ¿qué significa escribir <em>el entero</em> 20? Cuando escribes <em>2</em> y luego <em>0</em> en un
+  papel, estas escribiendo texto, no un entero. <em>El entero</em> 20 es el número de dedos
+  que tengo; no es <em>2</em> seguido de un <em>0</em>.</p>
+
+<p>Bueno, ahí está el secreto de nuestro amigo <code>puts</code>. Antes de que <code>puts</code> trate de
+  imprimir un objeto, usa <code>to_s</code> para obtener la versión en texto de ese objeto. De
+  hecho, la <em>s</em> en <code>puts</code> significa <em>string</em> (que en español significa texto);
+  <code>puts</code>
+  realmente significa <em>put string</em> (que en español significa imprimir texto).</p>
+
+<p>Esto puede no parecer muy emocionante ahora, pero hay muchos, <em>muchos</em> objetos en
+  Ruby (¡inclusive vas a aprender a crear tus propios objetos!), y es bueno saber que
+  va a pasar cuando trates de ejecutar <code>puts</code> con un objeto bastante raro, como la
+  foto de tu abuela, o un archivo de música, etc. Pero eso vendrá después ...</p>
+
+<p>Mientras tanto, tenemos unos cuantos métodos para ti, y ellos nos permiten
+  escribir todo tipo de programas divertidos ...</p>
+
+<h2>
+  <a name="los-m%C3%A9todos-gets-y-chomp" class="anchor" href="#los-m%C3%A9todos-gets-y-chomp"><span class="mini-icon mini-icon-link"></span></a>Los
+  Métodos <code>gets</code> y <code>chomp</code>
+</h2>
+
+<p>Si <code>puts</code> significa <em>put string</em>, estoy seguro que puedes adivinar que significa
+  <code>gets</code>, <em>get string</em> (recibir texto). Y así como <code>puts</code> siempre devuelve texto,
+  <code>gets</code> sólo funciona con texto. ¿Y de dónde lo recibe?</p>
+
+<p>¡De ti! Bueno, de tu teclado, en realidad. Ya que tu teclado sólo escribe texto,
+  todo funciona bien. Lo que realmente pasa es que <code>gets</code> simplemente
+  lee todo lo que tipeas hasta que presionas <code>Enter</code>. Intentémoslo:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>puts gets
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>*¿Hay eco aquí?*
+  ¿Hay eco aquí?
+</code></pre>
+
+<p>Por supuesto, lo que sea que escribas simplemente será impreso en pantalla por ti.
+  Ejecútalo unas cuantas veces e intenta escribir cosas distintas.</p>
+
+<p>¡Ahora podemos escribir programas interactivos! En este caso, escribe tu
+  nombre y te saludará:</p>
+
+<pre><code>puts 'Hola, ¿cuál es tu nombre?'
+  name = gets
+  puts '¿Tu nombre es ' + name + '? ¡Es un nombre adorable!'
+  puts 'Encantado de conocerte, ' + name + '. :)'
+</code></pre>
+
+<p><em>Uhm!</em> Acabo de ejecutarlo, escribí mi nombre y esto es lo que he obtenido:</p>
+
+<pre><code>Hola, ¿cuál es tu nombre?
+  *Chris*
+  ¿Tu nombre es Chris
+  ? ¡Es un nombre adorable!
+  Encantado de conocerte, Chris
+  . :)
+</code></pre>
+
+<p>Hmmm... parece que cuando escribí las letras <em>C</em>, <em>h</em>, <em>r</em>, <em>i</em>, <em>s</em>, y luego
+  presioné
+  <code>Enter</code>, <code>gets</code> recibió todas las letras de mi nombre <em>y</em> el <code>Enter</code>!
+  Afortunadamente,
+  hay un método para este tipo de cosas: <code>chomp</code>. Ésto elimina cualquier <code>Enter</code>
+  al final del texto. Intentémoslo de nuevo, pero con <code>chomp</code> para
+  que nos ayude:</p>
+
+<p><em>Código:</em></p>
+
+<pre><code>puts 'Hola, ¿cuál es tu nombre?'
+  name = gets.chomp
+  puts '¿Tu nombre es ' + name + '? ¡Es un nombre adorable!'
+  puts 'Encantado de conocerte, ' + name + '. :)'
+</code></pre>
+
+<p><em>Resultado:</em></p>
+
+<pre><code>Hola, ¿cuál es tu nombre?
+  Chris
+  ¿Tu nombre es Chris? ¡Es un nombre adorable!
+  Encantado de conocerte, Chris. :)
+</code></pre>
+
+<p>¡Mucho mejor! Nota que ya que <code>name</code> apunta a <code>gets.chomp</code>, no tenemos que usar
+  <code>name.chomp</code>; <code>name</code> ya fue procesado por `chomp.</p>
+
+<h2>
+  <a name="algunas-cosas-por-intentar" class="anchor" href="#algunas-cosas-por-intentar"><span class="mini-icon mini-icon-link"></span></a>Algunas
+  cosas por intentar</h2>
+
+<ul>
+  <li><p>Escribe un programa que pregunte por el nombre de una persona,
+    luego el segundo nombre y luego el apellido. Finalmente, debería saludar
+    a la persona con el nombre completo.</p></li>
+  <li><p>Escribe un programa que pregunte por el número favorito del
+    usuario. Haz que tu programa agregue un número, luego sugiera el resultado
+    como el número favorito pero <em>más grande y mejorado</em> (Pero hazlo con tacto).</p></li>
+</ul>
+<p>Una vez que hayas terminado los dos programas (y otros que hayas
+  intentado), tratemos de aprender más (y más sobre)
+  <%= link_to "¡métodos!", :controller => :tutorial, :action => :metodos %>.</p></article>
+</div>
+<br><br><br><br><br><br><br><br>
