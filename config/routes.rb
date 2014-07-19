@@ -1,4 +1,5 @@
 Iverlandth::Application.routes.draw do
+
   get 'others/index'
 
   get 'others/sieapp'
@@ -34,7 +35,8 @@ Iverlandth::Application.routes.draw do
   get 'ruby/clases'
 
   get 'ruby/bloquesyprocesos'
-  get 'dashboard#index'
+
+  get 'dashboard/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
