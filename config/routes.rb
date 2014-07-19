@@ -1,47 +1,9 @@
 Iverlandth::Application.routes.draw do
-
-  get 'others/index'
-
-  get 'others/sieapp'
-
-  get 'others/phpcodeigniter'
-
-  get 'others/iror'
-
-  get 'others/git'
-
-  get 'others/sqli'
-
-  get 'others/and'
-
-  get 'ruby/inicio'
-
-  get 'ruby/numeros'
-
-  get 'ruby/textos'
-
-  get 'ruby/variables'
-
-  get 'ruby/conversiones'
-
-  get 'ruby/metodos'
-
-  get 'ruby/controldeflujo'
-
-  get 'ruby/matrices'
-
-  get 'ruby/metodospropios'
-
-  get 'ruby/clases'
-
-  get 'ruby/bloquesyprocesos'
-
-  get 'dashboard/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'dashboard#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -92,4 +54,3 @@ Iverlandth::Application.routes.draw do
   #     resources :products
   #   end
 end
-
