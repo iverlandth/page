@@ -4,15 +4,17 @@
     <data-source source="LOCAL" name="Rails blogkyoir: development" uuid="4a9bb1dd-ca58-45a2-965d-cf89fd5f36c3">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:iverlandth_development</jdbc-url>
-      <user-name>iverlandth</user-name>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/iverlandth_development</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails blogkyoir: test" uuid="a59089c8-5d46-4f9c-ad2d-c525f2ccb605">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:iverlandth_test</jdbc-url>
-      <user-name>iverlandth</user-name>
+      <user-name>postgres</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails blogkyoir: production" uuid="eb52d18a-681c-4020-94a6-898362b76538">
