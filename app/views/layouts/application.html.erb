@@ -1,76 +1,173 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-
   <meta name="viewport" content="width=device-width"/>
-
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="Android, móviles, programación, Market, curso, online, Ruby, Rails, tecnologia" />
-  <meta name="description" content="Rails: Programación Aplicaciones para móviles, curso online android y ruby" />
-
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="keywords" content="Android, móviles, programación, Market, curso, online, Ruby, Rails, tecnologia"/>
+  <meta name="description" content="Rails: Programación Aplicaciones para móviles, curso online android y ruby"/>
 
   <title> Iverlandth | Dosis de Ruby on Rails, tecnologia y demás</title>
-
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-38346573-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-  </script>
 </head>
 <body>
+<div class="navbar-wrapper">
+  <div class="container">
+
+    <div class="navbar navbar-static-top" role="navigation">
+      <div class="container ">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <h1>Iverlandth (イヴェール)</h1>
+              <h5>
+                Dósis de Ruby on Rails, tecnología y demás
+              </h5>
+          </a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+          <ul class="nav navbar-nav">
+
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guias <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li class="a">
+                  Ruby on Rails (RoR) <%= link_to "instalación ", :controller=> :others , :action=> :iror %> <%= link_to "Primera aplicación", :controller=> :others , :action=> :sieapp %>
+                  <%= link_to "Ruby", :controller=> :ruby , :action=> :inicio %>
+                  <%= link_to "Github con RoR", :controller => :others, :action => "git" %></li>
+                <li>
+                  Lenguajes de programación <%=  link_to "php(codeigniter)", :controller=>:others, :action=>"phpcodeigniter" %>
+                  <%=  link_to "android(curso audio visual)", :controller=>:others, :action=>"and" %>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="https://github.com/iverlandth" target="_blank">Git Hub</a></li>
+                <li id="fb"><a href="https://www.facebook.com/kyoir" target="_blank">Facebook</a></li>
+                <li id="tw"><a href="http://twitter.com/iverlandth" target="_blank">Twitter</a></li>
+                <li id="gps"><a href=" https://plus.google.com/109531977658543006082" target="_blank">Google +</a></li>
+
+                <li><%#= link_to "Contact", :controller => "contactos", :action => "new" %></li>
+                <li><%= link_to "Blog" %></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 <p id="notice"><%= notice %></p>
 <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
 <%= yield %>
 
-</body>
+<footer class="content-info" role="contentinfo">
+  <div class="container">
 
-<div id="footerp">
-  <ul id="lava-menu">
-    <li><a href="https://github.com/iverlandth" target="_blank">Git Hub</a></li>
-    <li id="fb"><a href="https://www.facebook.com/kyoir" target="_blank">Facebook</a></li>
-    <li id="tw"><a href="http://twitter.com/iverlandth" target="_blank">Twitter</a></li>
-    <li id="gps"><a href=" https://plus.google.com/109531977658543006082" target="_blank">Google +</a></li>
+    <div class="row">
+      <div class="col-sm-5">
+        <h5>IverlandthCopr Design
+          <small>Web &amp; Graphic Design Agency</small>
+        </h5>
+        <p><a href='http://twitter.com/iverlandth' target="_blank">@iverlandth</a></p>
 
-    <li><%= link_to "Contact", :controller => "contactos", :action => "new" %></li>
-    <li><%= link_to "Blog" %></li>
-    <div class="cont-l">
-      <div id="lavalamp"></div>
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="fb-like" data-href="https://iverlandth.herokuapp.com/" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="segoe ui" data-colorscheme="light"></div>
+        <br/>
+        <br/>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://iverlandth.herokuapp.com/" data-via="iverlandth" data-lang="es" data-related="iverlandth" data-hashtags="ror">Twittear</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <br/>
+
+        <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300" data-href="https://iverlandth.herokuapp.com/"></div>
+
+        <!-- Place this tag after the last +1 button tag. -->
+        <script type="text/javascript">
+            window.___gcfg = {lang: 'es-419'};
+
+            (function () {
+                var po = document.createElement('script');
+                po.type = 'text/javascript';
+                po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+
+      </div>
+      <div class="col-sm-5">
+
+        <h5>From the Blog<sup>Rd</sup></h5>
+        <a href="#">Wearable technologies:
+          revolutionary tools and ludicrous gadgets</a>
+
+        <p>The recent technological history has accustomed us to witness epochal changes that arise quietly and soon
+          invade our lives, changing …
+          <a href="#">Continued</a>
+        </p>
+
+      </div>
+      <div class="col-sm-2 hidden-xs">
+        <%= image_tag "meeting.gif", :class => "slogan pull-right", :width => "170", :height => "180" %>
+      </div>
     </div>
-  </ul>
-  <h1><%= link_to "Iverlandth (イヴェール)", root_path %></h1>
- <br>
-  <h4> Dósis de Ruby on Rails, tecnología y demás </h4>
 
-  <hr>
+    <hr>
+    <div class="pull-right">
+      <p class="copyright"><a href="#">Privacy and legal notes</a> - © 2014 Riot Design</p>
+    </div>
 
-  <p>
-    <script language=JavaScript src="http://server01.contadorwap.com/hitv2.php?id=1c6252897fb0233ff404a00eec8fe7de&s=14&tipo=grafico&t=1358226232"></script>
-    <script>var _uox = _uox || {};(function() {var s=document.createElement("script");
-        s.src="http://static.usuarios-online.com/uo.js";document.getElementsByTagName("head")[0].appendChild(s);})();</script>
-    <a href="http://usuarios-online.com/es/stats/2d8b74df67dea2e4a75bdcad15a0f03b" target="_blank" id="uox_link"
-       rel="2d8b74df67dea2e4a75bdcad15a0f03b">Usuarios Online</a>
+  </div>
+</footer>
+<script type="text/javascript">
 
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38346573-1']);
+    _gaq.push(['_trackPageview']);
 
-    &#169; 2012-2013 - Designed By <a href='http://twitter.com/iverlandth' target="_blank">@iverlandth</a>.
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
 
-  </p>
-
-</div>
+</script>
+</body>
 </html>

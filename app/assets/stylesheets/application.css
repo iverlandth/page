@@ -5,21 +5,19 @@
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
  *
- *= require_self
+ *= require bootstrap
  *= require_tree .
-*/
-body{
-    /*
-   background: url("bg.jpg") scroll 0 0 ;
-    margin: 0px
-    background-repeat: repeat-x;
-    background-attachment: fixed;
+ *= require_self
+ */
 
-
-    color: #ffffff;*/
+body {
+    padding-bottom: 60px;
+    color: #ffffff;
     background: rgb(76,69,76); /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover,  rgba(76,69,76,1) 1%, rgba(50,43,50,1) 50%, rgba(20,10,18,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(76,69,76,1)), color-stop(50%,rgba(50,43,50,1)), color-stop(100%,rgba(20,10,18,1))); /* Chrome,Safari4+ */
@@ -29,198 +27,134 @@ body{
     background: radial-gradient(ellipse at center,  rgba(76,69,76,1) 1%,rgba(50,43,50,1) 50%,rgba(20,10,18,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c454c', endColorstr='#140a12',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-#footerp  h1 a{
-    color: rgba(253, 158, 28, 0.90);
-    font-size: 45px;
-    float: left;
-    margin-top: -40px;
-}
 
-#footerp  h1 a:hover{
-    color: rgba(16, 171, 252, 0.90);
-    text-shadow: 2px 2px 2px black ;
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
 
-}
-
-#footerp{
-    position: fixed !important;
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
     position: absolute;
-    bottom: 0;
+    top: 0;
+    right: 0;
     left: 0;
-    clear: both;
-    width: 100%;
-    bottom:0px;
-    text-decoration: none;
-    margin-top: 10px;
-    background-color: #B41D23;
-    background: linear-gradient(rgba(180,29,35,1.0), rgba(78,22,21,1.0));
-    background: -moz-linear-gradient(rgba(180,29,35,1.0), rgba(78,22,21,1.0));
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(180,29,35,1.0)), to(rgba(78,22,21,1.0)));
-      height: 110px;
-
-   z-index: 80;
-/*/*fat: right;
-   margin-top: -40px;*/
+    z-index: 20;
 }
-#footerp p{
-    color: #ffffff;
-    text-decoration: none;
-    float: right;
 
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
 }
-#footerp a{
-    color: #fff6f9;
-    text-decoration: none;
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
 }
-#footerp p a:hover{
-    color: #df8527;
-    text-decoration: none;
-
+.navbar-wrapper .navbar .container {
+    width: auto;
 }
 
 
-#fb a:hover{
-     color: #5882ff;
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    height: 100%;
+    margin-bottom: 50px;
 }
-#tw a:hover{
-    color: #6ed8ff;
-}
-#gps a:hover{
-    color: #b22222;
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
 }
 
-/*
-form input[type=number], form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=file], form input[type=tel], form textarea {
-
-    padding: 6px 6px 6px 15px;
-
-    margin: 0 0 2px 0;
-    width: 353px;
-
-    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-}   */
-.container{
-    width: 90%;
-    margin: auto;
-    color: #ffffff;
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 800px;
+   /* background-color: #777;*/
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
 }
 
 
-/* line 82, /app/views/common.sass */
-hr {
-    background: #17171e;
-    border: none;
-    -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
-    -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
-    -o-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), 0 0 0 1px #101015 inset;
-    height: 3px;
-    margin: 36px 0;
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing .col-lg-4 p {
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
-/* line 92, /app/views/common.sass*/
-.fieldWithErros input[type="text"],
-.fieldWithErrors input[type="password"],
-.fieldWithErros input[type="email"],
-.fieldWithErrors textarea,
-.error input[type="text"],
-.error input[type="password"],
-.error textarea {
-    border-bottom: 1px solid #ff2b6e;
-    color: #ffd1e3;
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #080813), color-stop(100%, #39101d));
-    background: -webkit-linear-gradient(top, #080813, #39101d);
-    background: -moz-linear-gradient(top, #080813, #39101d);
-    background: -o-linear-gradient(top, #080813, #39101d);
-    background: -ms-linear-gradient(top, #080813, #39101d);
-    background: linear-gradient(top, #080813, #39101d);
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
 }
 
-/* line 104, /app/views/common.sass */
-input[type="text"],
-textarea {
-    background: #0d0e13;
-    border: 1px solid black;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -o-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    border-radius: 3px;
-    -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
-    -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
-    -o-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
-    color: #f0f0ff;
-    display: block;
-    font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
-    font-size: 13px;
-    padding: 10px 8px;
-    width: 384px;
-}
-/* line 118, /app/views/common.sass */
-input[type="text"]::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-    color: #494b63;
-}
-/* line 121, /app/views/common.sass */
-input[type="text"]:focus,
-textarea:focus {
-    background: url("/images/input-focus-bg.png") bottom repeat-x, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #070812), color-stop(100%, #253e5c));
-    background: url("/images/input-focus-bg.png") bottom repeat-x, -webkit-linear-gradient(top, #070812 50%, #253e5c);
-    background: url("/images/input-focus-bg.png") bottom repeat-x, -moz-linear-gradient(top, #070812 50%, #253e5c);
-    background: url("/images/input-focus-bg.png") bottom repeat-x, -o-linear-gradient(top, #070812 50%, #253e5c);
-    background: url("/images/input-focus-bg.png") bottom repeat-x, -ms-linear-gradient(top, #070812 50%, #253e5c);
-    background: url("/images/input-focus-bg.png") bottom repeat-x, linear-gradient(top, #070812 50%, #253e5c);
-    border-color: black;
-    color: #a5d1f8;
-    outline: none;
-}
-/* line 127, /app/views/common.sass */
-input[type="text"]:focus::-webkit-input-placeholder,
-textarea:focus::-webkit-input-placeholder {
-    color: #68829d;
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
 }
 
-/* line 130, /app/views/common.sass
-input[type="submit"] {
-    background: #858597;
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e7e9), color-stop(100%, #afb0b4));
-    background: -webkit-linear-gradient(top, #e6e7e9, #afb0b4);
-    background: -moz-linear-gradient(top, #e6e7e9, #afb0b4);
-    background: -o-linear-gradient(top, #e6e7e9, #afb0b4);
-    background: -ms-linear-gradient(top, #e6e7e9, #afb0b4);
-    background: linear-gradient(top, #e6e7e9, #afb0b4);
-    border: none;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -o-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
-    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.25) inset;
-    color: #0f0e13;
-    display: block;
-    -webkit-font-smoothing: antialiased;
-    font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 8px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-*/
-/* line 149, /app/views/common.sass
-input[type="submit"] {
-    width: 202px;
-}*/
-/* line 152, /app/views/common.sass
-input[type="submit"]:hover {
-    cursor: pointer;
-}
-*/
 
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    /* Navbar positioning foo */
+    .navbar-wrapper {
+        margin-top: 20px;
+    }
+    .navbar-wrapper .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar-wrapper .navbar {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* The navbar becomes detached from the top, so we round the corners */
+    .navbar-wrapper .navbar {
+        border-radius: 4px;
+    }
+
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+article.container{
+    margin-top:100px;
+}
+
+@media (min-width: 992px) {
+    .featurette-heading {
+        margin-top: 120px;
+    }
+}
