@@ -1,0 +1,137 @@
+<div id="readme" class="blob instapaper_body">
+  <article class="container" itemprop="mainContentOfPage"><h1>
+    <a name="variables" class="anchor" href="#variables"><span class="mini-icon mini-icon-link"></span></a>Variables
+  </h1>
+
+    <p>Hasta ahora, cuando usamos <code>'puts'</code> para un texto o número, esto
+      desaparece. A lo que me refiero es que, si queremos imprimir algo dos
+      veces, necesitamos escribirlo dos veces:</p>
+
+    <p><em>Código:</em></p>
+
+<pre><code>puts '...puedes decir eso de nuevo...'
+  puts '...puedes decir eso de nuevo...'
+</code></pre>
+
+    <p><em>Resultado:</em></p>
+
+<pre><code>...puedes decir eso de nuevo...
+  ...puedes decir eso de nuevo...
+</code></pre>
+
+    <p>Sería bueno si pudiesemos escribirlo solo una vez y quedárnoslo...
+      guardarlo en algún lado. Bueno, sí podemos, por supuesto; de otra
+      manera, ¡no lo hubiese mencionado!</p>
+
+    <p>Para guardar el texto en la memoria de tu computador, necesitamos darle
+      un nombre al texto. Los programadores se refieren frecuentemente a este
+      proceso como <strong>asignación</strong> y llaman a los nombres <strong>variables</strong>. Esta variable
+      puede ser cualquier secuencia de letras o números, pero el primer caracter
+      necesita ser minúscula. Probemos nuestro programa de nuevo, pero esta vez
+      voy a darle el nombre <code>'myString'</code> al texto (aunque podría haber usado cualquier
+      nombre, por ejemplo <code>'str'</code> or <code>'myOwnLittleString'</code> or <code>'henryTheEighth'</code>).</p>
+
+    <p><em>Código:</em></p>
+
+<pre><code>myString = '...puedes decir eso de nuevo...'
+  puts myString
+  puts myString
+</code></pre>
+
+    <p><em>Resultado:</em></p>
+
+<pre><code>...puedes decir eso de nuevo...
+  ...puedes decir eso de nuevo...
+</code></pre>
+
+    <p>En todo momento cuando haces referencia a <code>'myString'</code>, el programa usa en su
+      reemplazo <code>"'...puedes decir eso de nuevo...'"</code>. Puedes pensar en la variable
+      <code>'myString'</code> como "apuntando" al texto <code>"'...puedes decir eso de nuevo...'"</code>.
+      Este es un ejemplo un poco más interesante.</p>
+
+    <p><em>Código:</em></p>
+
+<pre><code>name = 'Patricia Rosanna Jessica Mildred Oppenheimer'
+  puts 'Me llamo ' + name + '.'
+  puts 'Wow! "' + name + '" es un nombre realmente largo!'
+</code></pre>
+
+    <p><em>Resultado:</em></p>
+
+<pre><code>Me llamo Patricia Rosanna Jessica Mildred Oppenheimer
+  Wow1 Patricia Rosanna Jessica Mildred Oppenheimer es un nombre realmente largo!
+</code></pre>
+
+    <p>También, así como podemos <strong>asignar</strong> un objeto a una variable,
+      podemos <strong>reasignar</strong> un objeto diferente a esa variable
+      (Por eso es que las llamamos variables: porque varían.)</p>
+
+    <p><em>Código:</em></p>
+
+<pre><code>composer = 'Mozart'
+  puts composer + ' fue "el amo", en su día.'
+
+  composer = 'Beethoven'
+  puts 'Pero yo prefiero a ' + composer + ', personalmente.'
+</code></pre>
+
+    <p><em>Resultado:</em></p>
+
+<pre><code>Mozart fue "el amo", en su día.
+  Pero yo prefiero a Beethoven, personalmente.
+</code></pre>
+
+    <p>Por supuesto, las variables pueden apuntar a cualquier tipo de objeto, no
+      sólo texto:</p>
+
+    <p><em>Código:</em></p>
+
+<pre><code>var = 'solo otro ' + 'texto'
+  puts var
+
+  var = 5 * (1+2)
+  puts var
+</code></pre>
+
+    <p><em>Resultado:</em></p>
+
+<pre><code>solo otro texto
+  15
+</code></pre>
+
+    <p>De hecho, las variables pueden apuntar a casi cualquier cosa...
+      excepto otras variables. ¿Pero qué pasa si lo intentamos?</p>
+
+    <p><em>Código:</em></p>
+
+<pre><code>var1 = 8
+  var2 = var1
+  puts var1
+  puts var2
+
+  puts ''
+
+  var1 = 'ocho'
+  puts var1
+  puts var2
+</code></pre>
+
+    <p><em>Resultado:</em></p>
+
+<pre><code>8
+  8
+
+  ocho
+  8
+</code></pre>
+
+    <p>Primero, cuando tratamos de apuntar <code>var2</code> a <code>var1</code> en realidad apuntamos a <code>8</code>
+      (que
+      es el valor al cual apuntaba <code>var1</code>). Luego cuando apuntamos <code>var1</code> a <code>'ocho'</code>,
+      el
+      valor de <code>var2</code> no cambia ya que en realidad no estaba apuntando a <code>var1</code> sino a
+      <code>8</code>.
+      Ahora que tenemos variables, números y textos, vamos a ver
+      como <%= link_to "mezclarlos", :controller => :ruby, :action => :conversiones %>.</p></article>
+</div>
+<br><br><br><br><br><br><br><br>

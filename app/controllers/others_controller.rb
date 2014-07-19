@@ -1,0 +1,19 @@
+class OthersController < ApplicationController
+  def index
+  end
+
+  def sieapp
+  end
+
+  def phpcodeigniter
+  end
+
+  def iror
+  end
+
+  def sqli
+  end
+
+  def and
+  end
+end
