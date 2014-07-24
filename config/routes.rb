@@ -1,4 +1,5 @@
 Iverlandth::Application.routes.draw do
+  get "tutorials/index"
   get 'others/index'
 
   get 'others/sieapp'

@@ -13,146 +13,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar-wrapper">
-  <div class="container">
+<nav id="icononav">
 
-    <div class="navbar navbar-static-top" role="navigation">
-      <div class="container ">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">
-            <h1>Iverlandth (イヴェール)</h1>
-              <h5>
-                Dósis de Ruby on Rails, tecnología y demás
-              </h5>
-          </a>
-        </div>
+  <ul class="links">
+    <li><a class="delay active" href="#"><span class="delay glyphicon glyphicon-dashboard"></span> Board</a></li>
+    <li><a class="delay" href="/tutorials/index"><span class="delay glyphicon glyphicon-book"></span> Projects</a><span class="alert">6</span></li>
+    <li><a class="delay" href="#"><span class="delay glyphicon glyphicon-comment"></span> Contacts</a></li>
+    <li><a class="delay" href="#"><span class="delay glyphicon glyphicon-user"></span> About</a></li>
+    <li><a class="delay" href="#"><span class="delay glyphicon glyphicon-globe"></span> Social</a></li>
+  </ul>
+  <ul class="links lower">
+    <li><a class="" href="/"><span>Iverlandth</span></a></li>
+  </ul>
 
-        <div class="navbar-collapse collapse pull-right">
-          <ul class="nav navbar-nav">
+</nav>
 
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guias <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="a">
-                  Ruby on Rails (RoR) <%= link_to "instalación ", :controller=> :others , :action=> :iror %> <%= link_to "Primera aplicación", :controller=> :others , :action=> :sieapp %>
-                  <%= link_to "Ruby", :controller=> :ruby , :action=> :inicio %>
-                  <%= link_to "Github con RoR", :controller => :others, :action => "git" %></li>
-                <li>
-                  Lenguajes de programación <%=  link_to "php(codeigniter)", :controller=>:others, :action=>"phpcodeigniter" %>
-                  <%=  link_to "android(curso audio visual)", :controller=>:others, :action=>"and" %>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="https://github.com/iverlandth" target="_blank">Git Hub</a></li>
-                <li id="fb"><a href="https://www.facebook.com/kyoir" target="_blank">Facebook</a></li>
-                <li id="tw"><a href="http://twitter.com/iverlandth" target="_blank">Twitter</a></li>
-                <li id="gps"><a href=" https://plus.google.com/109531977658543006082" target="_blank">Google +</a></li>
-
-                <li><%#= link_to "Contact", :controller => "contactos", :action => "new" %></li>
-                <li><%= link_to "Blog" %></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
 <p id="notice"><%= notice %></p>
 <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
-<footer class="content-info" role="contentinfo">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-sm-5">
-        <h5>IverlandthCopr Design
-          <small>Web &amp; Graphic Design Agency</small>
-        </h5>
-        <p><a href='http://twitter.com/iverlandth' target="_blank">@iverlandth</a></p>
-
-        <div id="fb-root"></div>
-        <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
-        <div class="fb-like" data-href="https://iverlandth.herokuapp.com/" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="segoe ui" data-colorscheme="light"></div>
-        <br/>
-        <br/>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://iverlandth.herokuapp.com/" data-via="iverlandth" data-lang="es" data-related="iverlandth" data-hashtags="ror">Twittear</a>
-        <script>!function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//platform.twitter.com/widgets.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, "script", "twitter-wjs");</script>
-        <!-- Place this tag where you want the +1 button to render. -->
-        <br/>
-
-        <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300" data-href="https://iverlandth.herokuapp.com/"></div>
-
-        <!-- Place this tag after the last +1 button tag. -->
-        <script type="text/javascript">
-            window.___gcfg = {lang: 'es-419'};
-
-            (function () {
-                var po = document.createElement('script');
-                po.type = 'text/javascript';
-                po.async = true;
-                po.src = 'https://apis.google.com/js/plusone.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(po, s);
-            })();
-        </script>
-
-      </div>
-      <div class="col-sm-5">
-
-        <h5>From the Blog<sup>Rd</sup></h5>
-        <a href="#">Wearable technologies:
-          revolutionary tools and ludicrous gadgets</a>
-
-        <p>The recent technological history has accustomed us to witness epochal changes that arise quietly and soon
-          invade our lives, changing …
-          <a href="#">Continued</a>
-        </p>
-
-      </div>
-      <div class="col-sm-2 hidden-xs">
-        <%= image_tag "meeting.gif", :class => "slogan pull-right", :width => "170", :height => "180" %>
-      </div>
-    </div>
-
-    <hr>
-    <div class="pull-right">
-      <p class="copyright"><a href="#">Privacy and legal notes</a> - © 2014 Riot Design</p>
-    </div>
-
-  </div>
-</footer>
 <script type="text/javascript">
 
     var _gaq = _gaq || [];
