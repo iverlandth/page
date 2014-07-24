@@ -1,4 +1,7 @@
 Iverlandth::Application.routes.draw do
+  resources :contacts
+
+  get "blog/index"
   get "about/index"
   get "tutorials/index"
   get 'others/index'

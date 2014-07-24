@@ -285,7 +285,7 @@ h1{
 	}
 
 	nav#icononav ul.links li a.active:hover{
-		border-color:#279cf2
+		border-color: #f2ef29
 	}
 
 	nav#icononav ul.links li a.active span{
@@ -299,7 +299,7 @@ h1{
 	}
 
 	nav#icononav ul.links li a:hover span{
-		color:#279cf2
+		color: #f2ef29
 	}
 
 	nav#icononav ul.links li a span{
