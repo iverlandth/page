@@ -1,4 +1,5 @@
 Iverlandth::Application.routes.draw do
+  get "about/index"
   get "tutorials/index"
   get 'others/index'
 
