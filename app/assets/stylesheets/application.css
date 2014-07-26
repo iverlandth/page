@@ -17,8 +17,10 @@
 
 body {
     padding-bottom: 60px;
+    font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+
     /*color: #ffffff;*/
-    background-color: #f4f4f4;
+    /*background-color: #f4f4f4;*/
     /*background: rgb(76,69,76); *//* Old browsers */
     /*background: -moz-radial-gradient(center, ellipse cover,  rgba(76,69,76,1) 1%, rgba(50,43,50,1) 50%, rgba(20,10,18,1) 100%); *//* FF3.6+ */
     /*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(76,69,76,1)), color-stop(50%,rgba(50,43,50,1)), color-stop(100%,rgba(20,10,18,1))); *//* Chrome,Safari4+ */

@@ -6,7 +6,8 @@ nav#icononav{
 	min-height:670px;
 	text-align:center;
     color: #ffffff;
-    background: rgb(0, 0, 0); /* Old browsers */
+    background: none repeat scroll 0% 0% rgba(239, 242, 246, 0.8);
+    /*background: rgb(0, 0, 0);  Old browsers */
     /*background: -moz-radial-gradient(center, ellipse cover,  rgba(76,69,76,1) 1%, rgba(50,43,50,1) 50%, rgba(20,10,18,1) 100%); *//* FF3.6+ */
     /*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(76,69,76,1)), color-stop(50%,rgba(50,43,50,1)), color-stop(100%,rgba(20,10,18,1))); *//* Chrome,Safari4+ */
     /*background: -webkit-radial-gradient(center, ellipse cover,  rgba(76,69,76,1) 1%,rgba(50,43,50,1) 50%,rgba(20,10,18,1) 100%); *//* Chrome10+,Safari5.1+ */
@@ -15,48 +16,6 @@ nav#icononav{
     /*background: radial-gradient(ellipse at center,  rgba(76,69,76,1) 1%,rgba(50,43,50,1) 50%,rgba(20,10,18,1) 100%); *//* W3C */
     /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c454c', endColorstr='#140a12',GradientType=1 ); *//* IE6-9 fallback on horizontal gradient */
 
-}
-
-nav#icononav .user{
-	display:inline-block;
-	width:90px;
-	height:90px;
-	margin:25px 0;
-	overflow:hidden;
-	text-align:center;
-	border-radius:100px;
-	-webkit-box-shadow:2px 0 5px #000;
-	-moz-box-shadow:2px 0 5px #000;
-	box-shadow:2px 0 5px #000
-}
-
-nav#icononav .user:hover img{
-	opacity:0.7
-}
-
-nav#icononav .user img{
-	width:100%;
-	border-radius:100px;
-	background-color:rgba(255,255,255,0.1)
-}
-
-nav#icononav .user .alert{
-	position:absolute;
-	top:20px;
-	right:20px;
-	width:22px;
-	height:22px;
-	line-height:20px;
-	margin:0;
-	padding:0;
-	color:#fff;
-	border:1px solid transparent;
-	border-color:rgba(0,0,0,0.1);
-	background-color:#279cf2;
-	border-radius:30px;
-	font-weight:700;
-	font-size:14px;
-	font-size:1.4rem
 }
 
 nav#icononav ul.links{
@@ -114,8 +73,7 @@ nav#icononav ul.links li .alert{
 
 nav#icononav ul.links li a{
 	display:block;
-	color:rgba(255,255,255,0.5);
-	text-shadow:1px 0 2px #000;
+    color: #000000;
 	border-left:4px solid transparent
 }
 
@@ -125,7 +83,7 @@ nav#icononav ul.links li a::before{
 	left:0;
 	width:100%;
 	height:20px;
-	color:rgba(255,255,255,0.2);
+	color: rgba(0, 0, 0, 0.50);
 	text-shadow:1px 0 1px #000;
 	text-transform:none;
 	text-align:center;
@@ -143,9 +101,9 @@ nav#icononav ul.links li a::before{
 }
 
 nav#icononav ul.links li a.active{
-	color:#fff;
+	color: #08ba90;
 	text-decoration:none;
-	border-color:#279cf2
+	border-color: #08ba90
 }
 
 nav#icononav ul.links li a.active:hover{
@@ -153,11 +111,11 @@ nav#icononav ul.links li a.active:hover{
 }
 
 nav#icononav ul.links li a.active span{
-	color:#279cf2
+	color:#047F61;
 }
 
 nav#icononav ul.links li a:hover{
-	color:#fff;
+	color: #ff0e1b;
 	text-decoration:none;
 	border-color:transparent
 }
@@ -168,7 +126,7 @@ nav#icononav ul.links li a:hover span{
 
 nav#icononav ul.links li a span{
 	display:block;
-	color:rgba(255,255,255,0.5);
+	color: rgb(221, 221, 221);
 	font-size:40px;
 	font-size:4rem;
 	line-height:50px
@@ -281,15 +239,15 @@ h1{
 	nav#icononav ul.links li a.active{
 		color:#fff;
 		text-decoration:none;
-		border-color:#279cf2
+		border-color: #08ba90
 	}
 
 	nav#icononav ul.links li a.active:hover{
-		border-color: #f2ef29
+		border-color: #f2d82f
 	}
 
 	nav#icononav ul.links li a.active span{
-		color:#279cf2
+		color: #047f61
 	}
 
 	nav#icononav ul.links li a:hover{
