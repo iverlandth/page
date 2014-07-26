@@ -19,8 +19,9 @@
 
 <p><em>Código:</em></p>
 
-<pre><code>toast = Proc.new do
-  puts '¡Aplausos!'
+<pre><code>
+  toast = Proc.new do
+    puts '¡Aplausos!'
   end
 
   toast.call
@@ -30,7 +31,8 @@
 
 <p><em>Resultado:</em></p>
 
-<pre><code>¡Aplausos!
+<pre><code>
+  ¡Aplausos!
   ¡Aplausos!
   ¡Aplausos!
 </code></pre>
@@ -44,8 +46,9 @@
 
 <p><em>Código:</em></p>
 
-<pre><code>teGusta = Proc.new do |algoRico|
-  puts '¡Me gusta *realmente* el '+algoRico+'!'
+<pre><code>
+  teGusta = Proc.new do |algoRico|
+    puts '¡Me gusta *realmente* el '+algoRico+'!'
   end
 
   teGusta.call 'chocolate'
@@ -54,7 +57,8 @@
 
 <p><em>Resultado:</em></p>
 
-<pre><code>¡Me gusta *realmente* el chocolate!
+<pre><code>
+  ¡Me gusta *realmente* el chocolate!
   ¡Me gusta *realmente* el ruby!
 </code></pre>
 
@@ -78,18 +82,19 @@
 
 <p><em>Código:</em></p>
 
-<pre><code>def hacerAlgoImportante unProc
-  puts '¡Todo el mundo DETENGANSE! Tengo algo que hacer...'
-  unProc.call
-  puts 'A todos: Está hecho. Continuen con lo que estaban haciendo.'
+<pre><code>
+  def hacerAlgoImportante unProc
+    puts '¡Todo el mundo DETENGANSE! Tengo algo que hacer...'
+    unProc.call
+    puts 'A todos: Está hecho. Continuen con lo que estaban haciendo.'
   end
 
   decirHola = Proc.new do
-  puts 'hola'
+    puts 'hola'
   end
 
   decirAdios = Proc.new do
-  puts 'adios'
+    puts 'adios'
   end
 
   hacerAlgoImportante decirHola
@@ -98,7 +103,8 @@
 
 <p><em>Resultado:</em></p>
 
-<pre><code>¡Todo el mundo DETENGANSE! Tengo algo que hacer...
+<pre><code>
+
   hola
   A todos: Está hecho. Continuen con lo que estaban haciendo.'
   ¡Todo el mundo DETENGANSE! Tengo algo que hacer...
@@ -125,23 +131,24 @@
 
 <p><em>Código:</em></p>
 
-<pre><code>def puedeHacerse unProc
-  if rand(2) == 0
-  unProc.call
-  end
+<pre><code>
+  def puedeHacerse unProc
+    if rand(2) == 0
+        unProc.call
+    end
   end
 
   def hacerDosVeces unProc
-  unProc.call
-  unProc.call
+    unProc.call
+    unProc.call
   end
 
   parpadeo = Proc.new do
-  puts '&lt;parpadeo&gt;'
+    puts '&lt;parpadeo&gt;'
   end
 
   mirada = Proc.new do
-  puts '&lt;mirada&gt;'
+    puts '&lt;mirada&gt;'
   end
 
   puedeHacerse parpadeo
@@ -152,7 +159,8 @@
 
 <p><em>Resultado:</em></p>
 
-<pre><code>&lt;mirada&gt;
+<pre><code>
+  &lt;mirada&gt;
   &lt;parpadeo&gt;
   &lt;parpadeo&gt;
   &lt;mirada&gt;
@@ -176,16 +184,17 @@
 
 <p><em>Código:</em></p>
 
-<pre><code>def hacerHastaQueSeaFalso primeraentrada, unProc
-  entrada = primeraentrada
-  salida = primeraentrada
+<pre><code>
+  def hacerHastaQueSeaFalso primeraentrada, unProc
+    entrada = primeraentrada
+    salida = primeraentrada
 
-  while salida
-  entrada = salida
-  salida = unProc.call entrada
-  end
+    while salida
+      entrada = salida
+      salida = unProc.call entrada
+    end
 
-  entrada
+    entrada
   end
 
   construirMatrizDeCuadrados = Proc.new do |array|
@@ -460,4 +469,3 @@
 
 </article>
 </div>
-<br><br><br><br><br><br><br><br>
