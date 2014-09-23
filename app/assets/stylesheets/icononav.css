@@ -101,7 +101,7 @@ nav#icononav ul.links li a::before{
 }
 
 nav#icononav ul.links li a.active{
-	color: #08ba90;
+	color: #ffffff;
 	text-decoration:none;
 	border-color: #08ba90
 }
@@ -111,7 +111,7 @@ nav#icononav ul.links li a.active:hover{
 }
 
 nav#icononav ul.links li a.active span{
-	color:#047F61;
+	color: #e69b2c;
 }
 
 nav#icononav ul.links li a:hover{
@@ -247,7 +247,7 @@ h1{
 	}
 
 	nav#icononav ul.links li a.active span{
-		color: #047a59
+		color: #e69b2c
 	}
 
 	nav#icononav ul.links li a:hover{

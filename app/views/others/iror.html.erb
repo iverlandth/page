@@ -1,6 +1,6 @@
 <article>
   <div class="span10">
-    <h2 id='setup_recipe_for_rails_girls'>Guia de instalación de ruby on rails</h2>
+    <h2 id='setup_recipe_for_rails_girls'><%= link_to '<i class="glyphicon glyphicon-circle-arrow-left"></i>'.html_safe, tutorials_index_path %> Guía de instalación de ruby on rails</h2>
     <span class='muted'>ref:rails</span>
 
     <p>Para construir aplicaciones y otras cosas con Ruby on Rails, tenemos que configurar algún software y el entorno
@@ -22,12 +22,25 @@
 
     <p>Haga clic en el menú Apple y seleccione <em>Acerca de</em>.</p>
 
-    <p><%= image_tag "1.jpg", :alt => 'Apple menu' %></p>
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="thumbnail">
+          <%= image_tag "install1.jpg", :alt => 'Apple menu' %>
+        </div>
+      </div>
+    </div>
+
 
     <p><strong>Paso 2.</strong> En la ventana que se encuentra la versión de su sistema operativo. Si el número de
       versión comienza con un 10,6, 10,7 o 10,8 de esta guía es para usted.</p>
 
-    <p><%= image_tag '2.png', :alt => 'About this Mac dialog' %></p>
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="thumbnail">
+          <%= image_tag 'install2.jpg', :alt => 'About this Mac dialog' %>
+        </div>
+      </div>
+    </div>
 
     <p><strong>Paso 3.</strong> Descargue el RailsInstaller para su versión de OS X:</p>
 

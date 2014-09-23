@@ -31,9 +31,9 @@ body {
     /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c454c', endColorstr='#140a12',GradientType=1 ); *//* IE6-9 fallback on horizontal gradient */
 }
 a {
-    color: #08ba90;
+    color: #089c72;
 }
 a:hover{
-    color: #047f61;
+    color: #e69b2c;
     text-decoration: none;
 }
