@@ -21,3 +21,16 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      contact:
+        one: Contacto
+        others: Contactos
+    attributes:
+      contact:
+        title: Título
+        name: Nombre
+        content: Descripción
+  contacts:
+    new:
+      new_contact: "Nuevo Contacto"

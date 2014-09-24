@@ -133,7 +133,7 @@ nav#icononav ul.links li a span{
 }
 
 .container{
-	padding:50px 50px 0 150px
+	padding:10px 10px 0 130px
 }
 
 h1{
@@ -178,7 +178,7 @@ h1{
 
 @media (max-width: 767px), (max-height: 670px){
 	.container{
-		padding:20px 20px 0 100px
+		padding:10px 10px 0 90px
 	}
 
 	nav#icononav{
@@ -270,7 +270,7 @@ h1{
 
 @media (max-width: 499px), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
 	.container{
-		padding:20px 20px 0 80px
+		padding:10px 10px 0 80px
 	}
 
 	nav#icononav{
