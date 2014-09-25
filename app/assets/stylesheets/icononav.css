@@ -111,17 +111,17 @@ nav#icononav ul.links li a.active:hover{
 }
 
 nav#icononav ul.links li a.active span{
-	color: #e69b2c;
+	color: #08ba90;
 }
 
 nav#icononav ul.links li a:hover{
-	color: #ff0e1b;
+	color: #08ba90;
 	text-decoration:none;
 	border-color:transparent
 }
 
 nav#icononav ul.links li a:hover span{
-	color: #f21208
+	color: #08ba90
 }
 
 nav#icononav ul.links li a span{
@@ -247,7 +247,7 @@ h1{
 	}
 
 	nav#icononav ul.links li a.active span{
-		color: #e69b2c
+		color: #08ba90
 	}
 
 	nav#icononav ul.links li a:hover{
@@ -257,7 +257,7 @@ h1{
 	}
 
 	nav#icononav ul.links li a:hover span{
-		color: #f2ef29
+		color: #08ba90
 	}
 
 	nav#icononav ul.links li a span{
