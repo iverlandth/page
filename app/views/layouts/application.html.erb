@@ -17,7 +17,7 @@
 
   <ul class="links">
     <li>
-      <a class="delay <%= 'active' if controller_name == "blog" %>" href="/blog/index"><span class="delay glyphicon glyphicon-dashboard"></span> Blog</a>
+      <a class="delay <%= 'active' if controller_name == "blog" %>" href="http://iverlandth.tumblr.com" title="My blog" target="_blank" ><span class="delay glyphicon glyphicon-dashboard"></span> Blog</a>
     </li>
     <li>
       <a class="delay <%= 'active' if controller_name =~ /tutorials|ruby|others/ %>" href="/tutorials/index"><span class="delay glyphicon glyphicon-book"></span> Tutoriales</a>
@@ -38,6 +38,7 @@
 </nav>
 
 <div class="container">
+  <p id="notice"><%= notice %></p>
   <%= yield %>
 </div>
 

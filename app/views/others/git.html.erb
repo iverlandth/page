@@ -41,8 +41,8 @@ Para instalar Git en <b>Ubuntu Linux</b> por ejemplo, haríamos lo siguiente en 
 
 <br/>
 
-<div style=" background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: #373738; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span>sudo apt-get install git git-core</span>
+<div>
+<pre><span>sudo apt-get install git git-core</span>
 </pre>
 </div>
 
@@ -53,11 +53,11 @@ Para instalar Git en <b>Ubuntu Linux</b> por ejemplo, haríamos lo siguiente en 
 Ahora tendremos que correr éstos comandos (Globales entre sistemas) para configurar nuestras opciones de Git:<br/>
 <br/>
 
-<div style="background-color: black; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;">
+<div>
 
 
-      <pre style="line-height: 125%; margin: 0;">1 <span>git config --global user.name</span> <span style="color: #0086d2;">"Tu Nombre"</span>
-2 <span style="color: #060606;">git config --global user.email tu-email@servicio.com</span>
+      <pre>1 <span>git config --global user.name</span> <span style="color: #0086d2;">"Tu Nombre"</span>
+2 <span>git config --global user.email tu-email@servicio.com</span>
 </pre>
 
 
@@ -71,8 +71,8 @@ Cuando necesitemos añadir un mensaje a nuestros Commits y no lo hagamos directa
 necesitamos que un editor aparezca y nos recuerde/permita hacerlo, para configurar ésta opción hacemos:<br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: #060606; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git config --global core.editor</span> <span style="color: #0086d2;">"editor"</span>
+<div >
+<pre ><span>git config --global core.editor</span> <span style="color: #0086d2;">"editor"</span>
 </pre>
 </div>
 <br/>
@@ -83,8 +83,8 @@ operativo y asegurarte de que el editor está instalado... Para Linux por ejempl
 de la siguiente manera antes de establecer la opción (en Ubuntu):<br/>
 <span style="color: #f3f3f3;"><br/></span>
 
-<div style="background: none repeat scroll 0% 0% black; border: medium solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;">
-  <pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">sudo apt-get install vim vim-gtk vim-gnome</span></pre>
+<div>
+  <pre><span>sudo apt-get install vim vim-gtk vim-gnome</span></pre>
 </div>
 <br/>
 <b>4) Nuestro primer Repo!</b><br/>
@@ -97,10 +97,9 @@ una imagen <b>.jpg o .png</b> por ejemplo, una <b>carpeta vacía</b>&nbsp;(con e
 hacen así:<br/>
 <br/>
 
-<div style="background-color: black; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;">
-
-      <pre style="line-height: 125%; margin: 0;">1 <span><span style="color: #060606;">cd ruta/a/carpeta</span>
-2 <span style="color: #060606;">git init</span>
+<div>
+      <pre>1 <span><span>cd ruta/a/carpeta</span>
+2 <span>git init</span>
 </span></pre>
 
 </div>
@@ -115,8 +114,8 @@ que éstos archivos se nos interpongan, tenemos que crear un archivo llamado <b>
 en la raíz de la carpeta del proyecto y debe de tener el siguiente formato según nuestras necesidades:<br/>
 <br/>
 
-<div style="background: #ffffff; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"># Ignorando grupos de archivos individuales por extensión
+<div>
+<pre># Ignorando grupos de archivos individuales por extensión
 
 rutas/de/locación/*.extensión
 
@@ -135,8 +134,8 @@ cargue las imágenes que puse en mi carpeta de ejemplo que hice arriba, el archi
 vacía. Mi archivo <i><b>.gitignore</b></i> quedaría algo así:<br/>
 <br/>
 
-<div style="background: #ffffff; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"># Ignorando JPG's y PNG's
+<div>
+<pre># Ignorando JPG's y PNG's
 
 /*.jpg
 /*.jpeg
@@ -166,8 +165,8 @@ Lo siguiente que se hace es añadir los archivos a nuestro <i>árbol git</i>. De
 la raíz de nuestro proyecto) hacemos lo siguiente:<br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: white; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git add .</span>
+<div>
+<pre><span>git add .</span>
 </pre>
 </div>
 <br/>
@@ -180,8 +179,8 @@ cuenta las modificaciones en el proyecto.<br/>
 Ahora tenemos que realizar un <i>commit</i>, para hacer válidos los cambios en nuestro proyecto. Ésto se hace con:<br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: white; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git commit -m</span> <span style="color: #0086d2;">"Mensaje"</span>
+<div>
+<pre><span >git commit -m</span> <span style="color: #0086d2;">"Mensaje"</span>
 </pre>
 </div>
 <br/>
@@ -194,8 +193,8 @@ preferencia. Si no quieren añadir mensaje, omitan el <b>-m</b>. <i>git commit</
   editarlos etc) Puedes usar el siguiente comando para añadir y hacer el commit:</i><br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: white; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git commit -a -m</span> <span style="color: #0086d2;">"Mensaje"</span>
+<div>
+<pre><span>git commit -a -m</span> <span style="color: #0086d2;">"Mensaje"</span>
 </pre>
 </div>
 <br/>
@@ -209,8 +208,8 @@ carpeta de tu proyecto desde tu último commit. Bueno, pues siempre puedes volve
 (es decir, al código como estaba al momento de realizar el último commit registrado) con el comando:<br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: white; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git checkout -f</span>
+<div>
+<pre><span>git checkout -f</span>
 </pre>
 </div>
 <br/>
@@ -259,10 +258,10 @@ Más adelante, crearemos un nuevo repositorio PRIVADO que funcione con Git como 
 </div>
 <div class="separator" style="clear: both; text-align: left;">
   <br/></div>
-<div style="background-color: black; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;">
+<div>
 
-      <pre style="line-height: 125%; margin: 0;">1 <span><span style="color: #060606;">git remote add origin https://usuario@bitbucket.org/usuario/repo.git</span>
-2 <span style="color: #060606;">git push -u origin master</span>
+      <pre>1 <span><span>git remote add origin https://usuario@bitbucket.org/usuario/repo.git</span>
+2 <span>git push -u origin master</span>
 </span></pre>
 
 </div>
@@ -287,8 +286,8 @@ no sea lo suficientemente confiable a nivel estabilidad puedo hacerlo en una ram
 intacto. Para crear ramas, usamos el siguiente comando:<br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: white; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git checkout -b NombredeRama</span>
+<div>
+<pre><span>git checkout -b NombredeRama</span>
 </pre>
 </div>
 <br/>
@@ -297,8 +296,8 @@ Donde <b>"NombredeRama"</b> es el nombre que le pondremos a nuestra rama que se 
 rama, usamos el comando:<br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: white; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git checkout rama</span>
+<div>
+<pre><span>git checkout rama</span>
 </pre>
 </div>
 <br/>
@@ -311,8 +310,8 @@ que el proyecto original (rama master) las integre. Para ésto sirve el <i>mergi
 nos moveremos a la rama donde queramos integrar el código nuevo (en el ejemplo la master) y haremos el merge con:<br/>
 <br/>
 
-<div style="background: none repeat scroll 0% 0% black; border: medium solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git merge Rama-a-Mezclar
+<div>
+<pre><span>git merge Rama-a-Mezclar
 </span></pre>
 </div>
 <br/>
@@ -321,9 +320,9 @@ mezclar <b>"ramapatito"</b> con <b>"master"</b> por ejemplo entonces haríamos:
 <br/>
 <br/>
 
-<div style="background-color: black;  border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;">
-  <pre style="line-height: 125%; margin: 0;">1 <span><span style="color: #060606;">git checkout master</span>
-2 <span style="color: #060606;">git merge ramapatito</span>
+<div>
+  <pre>1 <span><span>git checkout master</span>
+2 <span>git merge ramapatito</span>
 </span></pre>
 
 </div>
@@ -335,8 +334,8 @@ Y eso añadiría los cambios realizados en <b>"ramapatito"</b> a la rama princip
 Cuando queramos borrar una rama que ya haya sido mezclada, lo haremos con:<br/>
 <br/>
 
-<div style="background: #111111; background: black; border-width: .1em .1em .1em .8em; border: solid gray; color: white; overflow: auto; padding: .2em .6em; width: auto;">
-<pre style="line-height: 125%; margin: 0;"><span style="color: #060606;">git branch -d Rama</span>
+<div>
+<pre><span>git branch -d Rama</span>
 </pre>
 </div>
 <br/>
@@ -353,4 +352,3 @@ tener un ambiente de trabajo más ordenado y tranquilo.
 </div>
 </article>
 by Xenode
-</br></br></br></br></br></br>

@@ -1,5 +1,12 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, only: [:index, :show, :edit, :update, :destroy]
+
+  def authenticate
+    authenticate_or_request_with_http_basic('Administration') do |username, password|
+      username == 'admin' && password == '3rlans1'
+    end
+  end
 
   # GET /contacts
   # GET /contacts.json
@@ -28,7 +35,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully sended.' }
+        format.html { redirect_to root_path, notice: 'Mensaje enviado.' }
         #format.json { render action: 'show', status: :created, location: @contact }
       else
         format.html { render action: 'new' }
@@ -69,6 +76,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:title, :name, :content)
+      params.require(:contact).permit(:name, :email, :message)
     end
 end

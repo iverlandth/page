@@ -197,9 +197,9 @@ es:
         others: Contactos
     attributes:
       contact:
-        title: Título
         name: Nombre
-        content: Descripción
+        email: Correo Electrónico
+        message: Mensaje
   contacts:
     new:
       title: "Nuevo Contacto"
