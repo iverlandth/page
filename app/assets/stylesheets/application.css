@@ -19,7 +19,9 @@
 body {
     padding-bottom: 60px;
     background: none repeat scroll 0% 0% rgba(239, 242, 246, 0.8);
-
+    background-image: url(/assets/header-bg.gif), url(/assets/footer-bg.jpg);
+    background-position: top,bottom;
+    background-repeat: repeat-x, repeat-x;
     /*color: #ffffff;*/
     /*background-color: #f4f4f4;*/
     /*background: rgb(76,69,76); *//* Old browsers */
@@ -37,4 +39,17 @@ a {
 a:hover{
     color: #e69b2c;
     text-decoration: none;
+}
+
+.read-section {
+    width: 100%;
+    background-color: #f3f9f8;
+    background-image: url(/assets/header-bg.gif), url(/assets/read-edges-bottom.jpg);
+    background-position: top,bottom;
+    background-repeat: repeat-x, repeat-x;
+    padding: 70px 0;
+    text-align: center;
+}
+.btn-color{
+    background: #39bdb9;
 }

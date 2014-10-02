@@ -1,0 +1,19 @@
+<ul class="links">
+  <li>
+    <a class="delay <%= 'active' if controller_name == "blog" %>" href="http://iverlandth.tumblr.com" title="My blog" target="_blank" ><span class="delay glyphicon glyphicon-dashboard"></span> Blog</a>
+  </li>
+  <li>
+    <a class="delay <%= 'active' if controller_name =~ /tutorials|ruby|others/ %>" href="/tutorials/index"><span class="delay glyphicon glyphicon-book"></span> Tutoriales</a>
+    <span class="alert badge fg-red">6</span>
+  </li>
+  <li>
+    <a class="delay <%= 'active' if controller_name == "contacts" %>" href="/contacts/new"><span class="delay glyphicon glyphicon-comment"></span> Contactos</a>
+  </li>
+  <li>
+    <a class="delay <%= 'active' if controller_name == "about" %>" href="/about/index"><span class="delay glyphicon glyphicon-user"></span> Acerca</a>
+  </li>
+  <!--<li><a class="delay" href="#"><span class="delay glyphicon glyphicon-globe"></span> Social</a></li>-->
+</ul>
+<ul class="links lower">
+  <li><a class="" href="/"><span>Iverlandth</span></a></li>
+</ul>

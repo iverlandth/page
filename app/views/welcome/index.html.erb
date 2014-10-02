@@ -1,110 +1,174 @@
 <div class="row">
-  <div class="col-md-6"><div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-      <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item active">
-        <%= image_tag 'bg/bg-archea.jpg' %>
-        <div class="container">
-          <div class="carousel-caption">
+  <div class="col-md-6">
+    <div>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="5" class=""></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag 'bg/bg-archea.jpg' %>
+            <div class="container">
+              <div class="carousel-caption">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag 'bg/slider3.png' %>
+            <div class="container">
+              <div class="carousel-caption">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag 'bg/bg-segno.jpg' %>
+            <div class="container">
+              <div class="carousel-caption">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag 'bg/slider2.png' %>
+            <div class="container">
+              <div class="carousel-caption">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag 'bg/bg-goodssolutions.jpg' %>
+            <div class="container">
+              <div class="carousel-caption">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag 'bg/slider3.png' %>
+            <div class="container">
+              <div class="carousel-caption">
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="item">
-        <%= image_tag 'bg/bg-segno.jpg' %>
-        <div class="container">
-          <div class="carousel-caption">
+      <div>
+        <div class="row">
+          <div class="col-md-4">
+            <img alt="Lines of Code Committed" class="icon" src="https://s3.amazonaws.com/oozou/assets/icn_codes-d5e19d28949cb888cce138c73e6d14fb.png">
+
+            <p class="text-center">926,100</p>
+            <h4 class="text-center">Lines of Code Committed</h4>
           </div>
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag 'bg/bg-goodssolutions.jpg' %>
-        <div class="container">
-          <div class="carousel-caption">
+          <div class="col-md-4">
+            <img alt="Days of Coding Experience" class="icon" src="https://s3.amazonaws.com/oozou/assets/icn_experience-825e82ff06b10350d13c93d470d5b776.png">
+
+            <p class="text-center"><%= number_with_delimiter((DateTime.now - DateTime.new(2007, 2, 3)).to_i, :delimiter => ',') %></p>
+            <h4 class="text-center">Days of Coding Experience</h4><h4>
+          </h4></div>
+          <div class="col-md-4">
+            <img alt="Project Deploys" class="icon" src="https://s3.amazonaws.com/oozou/assets/icn_project_launched-70209baf7f2f51501fa32c3a4446cadb.png">
+
+            <p class="text-center">4,900</p>
+            <h4 class="text-center">Project Deploys</h4>
           </div>
         </div>
       </div>
     </div>
-  </div></div>
+  </div>
   <div class="col-md-6">
-    <a class="twitter-timeline" href="https://twitter.com/iverlandth" data-widget-id="493019055545008128">Tweets por @iverlandth</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <a class="twitter-timeline" href="https://twitter.com/iverlandth" data-widget-id="493019055545008128">Tweets por
+      @iverlandth</a>
+    <script>!function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, "script", "twitter-wjs");</script>
   </div>
 </div>
 
 <hr>
+<div class="panel panel-default bg-grayLighter">
+  <div class="panel-body">
+    <footer class="content-info " role="contentinfo">
 
-<footer class="content-info" role="contentinfo">
+      <div class="row">
+        <div class="col-sm-5 col-md-5">
+          <h5>IverlandthCorp Design
+            <small>Web &amp; Graphic Design Agency</small>
+          </h5>
+          <p><a href='http://twitter.com/iverlandth' target="_blank">@iverlandth</a></p>
 
-    <div class="row">
-      <div class="col-sm-5">
-        <h5>IverlandthCorp Design
-          <small>Web &amp; Graphic Design Agency</small>
-        </h5>
-        <p><a href='http://twitter.com/iverlandth' target="_blank">@iverlandth</a></p>
+          <div id="fb-root"></div>
+          <script>(function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
 
-        <div id="fb-root"></div>
-        <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+          <div class="fb-like" data-href="https://iverlandth.herokuapp.com/" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="segoe ui" data-colorscheme="light"></div>
+          <br/>
+          <br/>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://iverlandth.herokuapp.com/" data-via="iverlandth" data-lang="es" data-related="iverlandth" data-hashtags="ror">Twittear</a>
+          <script>!function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (!d.getElementById(id)) {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = "//platform.twitter.com/widgets.js";
+                  fjs.parentNode.insertBefore(js, fjs);
+              }
+          }(document, "script", "twitter-wjs");</script>
+          <!-- Place this tag where you want the +1 button to render. -->
+          <br/>
 
-        <div class="fb-like" data-href="https://iverlandth.herokuapp.com/" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="segoe ui" data-colorscheme="light"></div>
-        <br/>
-        <br/>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://iverlandth.herokuapp.com/" data-via="iverlandth" data-lang="es" data-related="iverlandth" data-hashtags="ror">Twittear</a>
-        <script>!function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//platform.twitter.com/widgets.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, "script", "twitter-wjs");</script>
-        <!-- Place this tag where you want the +1 button to render. -->
-        <br/>
+          <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300" data-href="https://iverlandth.herokuapp.com/"></div>
 
-        <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300" data-href="https://iverlandth.herokuapp.com/"></div>
+          <!-- Place this tag after the last +1 button tag. -->
+          <script type="text/javascript">
+              window.___gcfg = {lang: 'es-419'};
 
-        <!-- Place this tag after the last +1 button tag. -->
-        <script type="text/javascript">
-            window.___gcfg = {lang: 'es-419'};
+              (function () {
+                  var po = document.createElement('script');
+                  po.type = 'text/javascript';
+                  po.async = true;
+                  po.src = 'https://apis.google.com/js/plusone.js';
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(po, s);
+              })();
+          </script>
 
-            (function () {
-                var po = document.createElement('script');
-                po.type = 'text/javascript';
-                po.async = true;
-                po.src = 'https://apis.google.com/js/plusone.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(po, s);
-            })();
-        </script>
+        </div>
+        <div class="col-sm-5 col-md-5">
+          <h5>From the Blog<sup>Rd</sup></h5>
+          <a href="#">Wearable technologies:
+            revolutionary tools and ludicrous gadgets</a>
 
+          <p>The recent technological history has accustomed us to witness epochal changes that arise quietly and soon
+            invade our lives, changing …
+            <a href="#">Continued</a>
+          </p>
+        </div>
+        <div class="col-sm-2 col-md-2">
+          <%= image_tag "meeting.gif", :class => "img-thumbnail" %>
+        </div>
       </div>
-      <div class="col-sm-5">
-        <h5>From the Blog<sup>Rd</sup></h5>
-        <a href="#">Wearable technologies:
-          revolutionary tools and ludicrous gadgets</a>
-        <p>The recent technological history has accustomed us to witness epochal changes that arise quietly and soon
-          invade our lives, changing …
-          <a href="#">Continued</a>
-        </p>
+      <hr>
+      <div class="pull-right">
+        <p class="copyright"><a href="#">Privacy and legal notes</a> - © 2014 IverlandthCorp Design</p>
       </div>
-      <div class="col-sm-2 hidden-xs">
-        <%= image_tag "meeting.gif", :class => "slogan pull-right", :width => "170", :height => "180" %>
-      </div>
-    </div>
-    <hr>
-    <div class="pull-right">
-      <p class="copyright"><a href="#">Privacy and legal notes</a> - © 2014 IverlandthCorp Design</p>
-    </div>
-</footer>
+    </footer>
+  </div>
+</div>
+
