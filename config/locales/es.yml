@@ -202,4 +202,4 @@ es:
         message: Mensaje
   contacts:
     new:
-      title: "Nuevo Contacto"
+      title: "Contacto"
